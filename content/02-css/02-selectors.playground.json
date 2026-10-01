@@ -1,0 +1,25 @@
+{
+  "title": "تمرین عملی: Selectorها",
+  "desc": "کارت زیر را با selectorهای CSS استایل دهید: عنوان، پاراگراف، دکمه‌ی primary و input ایمیل باید ظاهر متفاوتی داشته باشند.",
+  "html": "<article class=\"card\">\n  <h2>ثبت‌نام</h2>\n  <p>اطلاعات خود را وارد کنید.</p>\n  <input type=\"email\" placeholder=\"ایمیل\">\n  <button class=\"primary\">ثبت</button>\n</article>",
+  "css": "",
+  "js": "",
+  "checks": [
+    [
+      "عنوان کارت استایل شده است",
+      "getComputedStyle(document.querySelector('.card h2')).fontSize !== getComputedStyle(document.body).fontSize || getComputedStyle(document.querySelector('.card h2')).fontWeight !== '400'"
+    ],
+    [
+      "input ایمیل border دارد",
+      "getComputedStyle(document.querySelector('input[type=\"email\"]')).borderStyle !== 'none'"
+    ],
+    [
+      "دکمه‌ی primary استایل دارد",
+      "getComputedStyle(document.querySelector('button.primary')).backgroundColor !== 'rgba(0, 0, 0, 0)'"
+    ],
+    [
+      "کارت دارای فاصله‌ی داخلی است",
+      "parseFloat(getComputedStyle(document.querySelector('.card')).paddingTop) > 0"
+    ]
+  ]
+}

@@ -1,0 +1,4 @@
+[
+  {"q":"دستور ساخت یک پوشه‌ی جدید در ترمینال کدام است؟","o":["cd","mkdir","ls","pwd"],"a":1,"e":"mkdir مخفف make directory است."},
+  {"q":"خطاهای JavaScript را در کدام تب DevTools می‌بینیم؟","o":["Elements","Network","Console","Sources"],"a":2,"e":"تب Console خطاها و پیام‌های console.log را نمایش می‌دهد."}
+]

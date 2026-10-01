@@ -1,0 +1,25 @@
+{
+  "title": "تمرین عملی: اولین استایل CSS",
+  "desc": "یک عنوان و یک پاراگراف بسازید و با CSS رنگ عنوان، رنگ پس‌زمینه و اندازه‌ی متن را تغییر دهید.",
+  "html": "<main>\n  <h1>یادگیری CSS</h1>\n  <p>این اولین تمرین CSS من است.</p>\n</main>",
+  "css": "",
+  "js": "",
+  "checks": [
+    [
+      "یک h1 دارد",
+      "document.querySelectorAll('h1').length === 1"
+    ],
+    [
+      "یک p دارد",
+      "document.querySelectorAll('p').length === 1"
+    ],
+    [
+      "h1 رنگ دارد",
+      "getComputedStyle(document.querySelector('h1')).color !== 'rgb(0, 0, 0)'"
+    ],
+    [
+      "p اندازه‌ی مشخصی دارد",
+      "parseFloat(getComputedStyle(document.querySelector('p')).fontSize) > 0"
+    ]
+  ]
+}

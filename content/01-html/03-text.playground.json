@@ -1,0 +1,13 @@
+{
+  "title": "تمرین عملی: رزومه‌ی ساده",
+  "desc": "یک رزومه بسازید: یک <code>h1</code> (نام)، حداقل دو <code>h2</code> (مثلاً مهارت‌ها و تحصیلات) و یک لیست <code>ul</code> با حداقل سه مورد.",
+  "html": "",
+  "css": "",
+  "js": "",
+  "checks": [
+    ["دقیقاً یک h1 دارد", "document.querySelectorAll('h1').length === 1"],
+    ["حداقل دو h2 دارد", "document.querySelectorAll('h2').length >= 2"],
+    ["یک لیست ul دارد", "!!document.querySelector('ul')"],
+    ["لیست حداقل سه li دارد", "document.querySelectorAll('ul li').length >= 3"]
+  ]
+}

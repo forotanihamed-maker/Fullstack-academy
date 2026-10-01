@@ -1,0 +1,10 @@
+.lessons{padding-right:1.4em}
+.lessons li{margin:8px 0}
+.crumb{margin:0 0 10px}
+.pager{display:flex;justify-content:space-between;gap:12px;margin:0 0 28px}
+.pager a{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 14px;text-decoration:none}
+.pager a:hover{border-color:var(--accent)}
+blockquote{border-right:4px solid var(--accent);margin:14px 0;padding:4px 16px;background:var(--soft);border-radius:8px}
+blockquote p{margin:6px 0}
+article h2{margin-top:1.6em}
+article img{max-width:100%}

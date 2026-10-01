@@ -1,0 +1,4 @@
+[
+  {"q":"ترتیب لایه‌های Box Model از داخل به بیرون کدام است؟","o":["margin, border, padding, content","content, padding, border, margin","padding, content, margin, border","content, border, padding, margin"],"a":1,"e":"ابتدا محتوا، بعد padding، بعد border و در آخر margin قرار دارد."},
+  {"q":"برای چیدن فرزندان یک المان کنار هم کدام را می‌نویسیم؟","o":["display: flex","position: fixed","float: none","overflow: hidden"],"a":0,"e":"display: flex المان را به Flex Container تبدیل می‌کند."}
+]

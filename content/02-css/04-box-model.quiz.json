@@ -1,0 +1,46 @@
+[
+  {
+    "q": "ترتیب بخش‌های Box Model از داخل به خارج کدام است؟",
+    "o": [
+      "Margin → Border → Padding → Content",
+      "Content → Padding → Border → Margin",
+      "Content → Border → Padding → Margin",
+      "Padding → Content → Margin → Border"
+    ],
+    "a": 1,
+    "e": "محتوا در مرکز است، سپس padding، بعد border و در بیرون margin قرار می‌گیرد."
+  },
+  {
+    "q": "padding چه کاری انجام می‌دهد؟",
+    "o": [
+      "فاصله‌ی بیرونی عنصر را زیاد می‌کند",
+      "فاصله‌ی بین content و border را ایجاد می‌کند",
+      "عنصر را از DOM حذف می‌کند",
+      "فقط رنگ متن را تغییر می‌دهد"
+    ],
+    "a": 1,
+    "e": "Padding فضای داخلی جعبه بین محتوا و border است."
+  },
+  {
+    "q": "با box-sizing: border-box، width معمولاً چه چیزی را دربرمی‌گیرد؟",
+    "o": [
+      "فقط content",
+      "content به‌علاوه padding و border",
+      "فقط margin",
+      "فقط border"
+    ],
+    "a": 1,
+    "e": "در border-box، width و height شامل content، padding و border هستند."
+  },
+  {
+    "q": "برای یک کانتینر responsive کدام الگو معمولاً مناسب‌تر است؟",
+    "o": [
+      "width: 2000px",
+      "width: 100%; max-width: 900px;",
+      "width: 100vw فقط",
+      "width: none"
+    ],
+    "a": 1,
+    "e": "ترکیب width: 100% و max-width اجازه‌ی جمع شدن در صفحات کوچک و محدود شدن در صفحات بزرگ را می‌دهد."
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "title": "تمرین عملی: فرم ثبت‌نام",
+  "desc": "فرم ثبت‌نام بسازید: نام، ایمیل (اجباری)، رمز (حداقل ۸ حرف)، انتخاب سطح با radio، شهر با select و تیک قبول قوانین (اجباری). هر فیلد <code>label</code> و <code>name</code> داشته باشد.",
+  "html": "<form>\n  <!-- فیلدها را اینجا بنویسید -->\n</form>\n",
+  "css": "label{display:block;margin-top:8px}",
+  "js": "",
+  "checks": [
+    ["یک form دارد", "!!document.querySelector('form')"],
+    ["ورودی ایمیل اجباری دارد", "!!document.querySelector('input[type=email][required]')"],
+    ["ورودی رمز با minlength=8 دارد", "!!document.querySelector('input[type=password][minlength=\"8\"]')"],
+    ["دو radio یا بیشتر با name یکسان دارد", "(function(){var r=[].slice.call(document.querySelectorAll('input[type=radio]'));return r.length>=2 && r.every(function(x){return x.name && x.name===r[0].name})})()"],
+    ["یک select با حداقل ۲ گزینه دارد", "!!document.querySelector('select') && document.querySelectorAll('select option').length >= 2"],
+    ["checkbox اجباری دارد", "!!document.querySelector('input[type=checkbox][required]')"],
+    ["حداقل سه label با for دارد", "document.querySelectorAll('label[for]').length >= 3"],
+    ["همه‌ی ورودی‌ها name دارند", "[].slice.call(document.querySelectorAll('input,select,textarea')).every(function(x){return x.getAttribute('name')})"]
+  ]
+}

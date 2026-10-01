@@ -1,0 +1,10 @@
+{
+  "title": "تمرین: شمارنده با Closure",
+  "desc": "تابعی به نام <code>makeCounter</code> بنویسید که تابعی برگرداند؛ هر بار آن تابع صدا زده شود عدد بعدی (از ۱) را برگرداند. شمارنده‌های مختلف باید از هم مستقل باشند.",
+  "start": "function makeCounter() {\n  // کد خود را اینجا بنویسید\n}\n",
+  "tests": [
+    ["اولین فراخوانی ۱ برمی‌گرداند", "makeCounter()()===1"],
+    ["فراخوانی سوم ۳ برمی‌گرداند", "(function(){const c=makeCounter();c();c();return c()===3})()"],
+    ["شمارنده‌ها مستقل‌اند", "(function(){const a=makeCounter(),b=makeCounter();a();a();return b()===1})()"]
+  ]
+}

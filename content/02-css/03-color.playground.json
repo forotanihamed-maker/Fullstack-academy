@@ -1,0 +1,25 @@
+{
+  "title": "تمرین عملی: رنگ و واحد",
+  "desc": "یک کارت responsive بسازید: عرض آن درصدی باشد، عنوان با clamp() اندازه بگیرد، فاصله‌ها rem باشند و پس‌زمینه رنگی با alpha داشته باشد.",
+  "html": "<article class=\"card\">\n  <h2>کارت من</h2>\n  <p>یک متن کوتاه برای آزمایش واحدها و رنگ‌ها.</p>\n</article>",
+  "css": "",
+  "js": "",
+  "checks": [
+    [
+      "عرض کارت مشخص است",
+      "parseFloat(getComputedStyle(document.querySelector('.card')).width) > 0"
+    ],
+    [
+      "عنوان اندازه‌ی مشخصی دارد",
+      "parseFloat(getComputedStyle(document.querySelector('.card h2')).fontSize) > 0"
+    ],
+    [
+      "کارت فاصله‌ی داخلی دارد",
+      "parseFloat(getComputedStyle(document.querySelector('.card')).paddingTop) > 0"
+    ],
+    [
+      "پس‌زمینه‌ی کارت رنگ دارد",
+      "getComputedStyle(document.querySelector('.card')).backgroundColor !== 'rgba(0, 0, 0, 0)' && getComputedStyle(document.querySelector('.card')).backgroundColor !== 'transparent'"
+    ]
+  ]
+}

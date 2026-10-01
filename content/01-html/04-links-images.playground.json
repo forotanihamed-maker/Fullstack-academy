@@ -1,0 +1,13 @@
+{
+  "title": "تمرین عملی: لینک و تصویر",
+  "desc": "سه لینک بسازید (یکی به سایت دیگر در تب جدید با <code>rel</code> امن، یکی ایمیل، یکی لنگر به پایین همین صفحه) و یک تصویر با <code>alt</code> مناسب بگذارید. برای تصویر می‌توانید از آدرس <code>https://via.placeholder.com/150</code> استفاده کنید.",
+  "html": "",
+  "css": "",
+  "js": "",
+  "checks": [
+    ["لینکی با target=_blank و rel شامل noopener دارد", "!!document.querySelector('a[target=_blank][rel*=noopener]')"],
+    ["لینک mailto دارد", "!!document.querySelector('a[href^=\"mailto:\"]')"],
+    ["لینک لنگر (#) دارد", "!!document.querySelector('a[href^=\"#\"]')"],
+    ["تصویری با alt غیرخالی دارد", "!!document.querySelector('img[alt]') && document.querySelector('img').alt.trim().length > 0"]
+  ]
+}

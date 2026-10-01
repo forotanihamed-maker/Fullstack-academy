@@ -1,0 +1,25 @@
+{
+  "title": "تمرین عملی: Box Model",
+  "desc": "یک کارت بسازید که box-sizing آن border-box باشد، padding و border داشته باشد و با max-width در صفحه‌های مختلف قابل استفاده باشد.",
+  "html": "<article class=\"card\">\n  <h2>Box Model</h2>\n  <p>محتوای کارت را اینجا قرار دهید.</p>\n</article>",
+  "css": "",
+  "js": "",
+  "checks": [
+    [
+      "box-sizing روی کارت border-box است",
+      "getComputedStyle(document.querySelector('.card')).boxSizing === 'border-box'"
+    ],
+    [
+      "کارت padding دارد",
+      "parseFloat(getComputedStyle(document.querySelector('.card')).paddingTop) > 0"
+    ],
+    [
+      "کارت border دارد",
+      "parseFloat(getComputedStyle(document.querySelector('.card')).borderTopWidth) > 0"
+    ],
+    [
+      "کارت max-width دارد",
+      "getComputedStyle(document.querySelector('.card')).maxWidth !== 'none'"
+    ]
+  ]
+}
