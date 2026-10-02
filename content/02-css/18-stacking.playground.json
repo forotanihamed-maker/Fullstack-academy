@@ -1,0 +1,8 @@
+{
+  "title": "Layer Lab",
+  "desc": "دو لایه با scale مشخص بسازید.",
+  "html": "<div class='back'>Back</div><div class='front'>Front</div>",
+  "css": ":root{--z-back:1;--z-front:10}.back,.front{position:absolute;padding:2rem}.back{z-index:var(--z-back)}.front{z-index:var(--z-front);margin:1rem}",
+  "js": "",
+  "checks": []
+}

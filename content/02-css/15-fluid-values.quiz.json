@@ -1,0 +1,13 @@
+[
+  {
+    "q": "ساختار clamp چیست؟",
+    "o": [
+      "max,min,value",
+      "min,preferred,max",
+      "start,end,step",
+      "low,high"
+    ],
+    "a": 1,
+    "e": "clamp(min, preferred, max) سه مقدار دارد."
+  }
+]

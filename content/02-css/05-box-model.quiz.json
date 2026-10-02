@@ -1,0 +1,57 @@
+[
+  {
+    "q": "کدام بخش فاصله داخل محتوا و border است؟",
+    "o": [
+      "margin",
+      "padding",
+      "border",
+      "content"
+    ],
+    "a": 1,
+    "e": "padding فاصله داخلی بین content و border است."
+  },
+  {
+    "q": "برای اینکه width شامل padding و border هم باشد چه می‌نویسیم؟",
+    "o": [
+      "box-sizing: content-box",
+      "box-sizing: border-box",
+      "display: border",
+      "width: auto"
+    ],
+    "a": 1,
+    "e": "border-box باعث می‌شود width شامل padding و border باشد."
+  },
+  {
+    "q": "با content-box، width:300px و padding افقی 24px و border افقی 2px چه عرض بیرونی می‌دهد؟",
+    "o": [
+      "300px",
+      "326px",
+      "352px",
+      "348px"
+    ],
+    "a": 2,
+    "e": "300 + 24 + 24 + 2 + 2 = 352px."
+  },
+  {
+    "q": "کدام property فضای داخل component را ایجاد می‌کند؟",
+    "o": [
+      "margin",
+      "padding",
+      "outline",
+      "gap فقط"
+    ],
+    "a": 1,
+    "e": "padding بخشی از فضای داخلی box است."
+  },
+  {
+    "q": "چرا box-sizing:border-box محبوب است؟",
+    "o": [
+      "width را غیرممکن می‌کند",
+      "width را شامل padding و border می‌کند",
+      "margin را حذف می‌کند",
+      "flex را فعال می‌کند"
+    ],
+    "a": 1,
+    "e": "در border-box اندازه‌ی اعلام‌شده شامل padding و border است."
+  }
+]

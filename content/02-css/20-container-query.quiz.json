@@ -1,0 +1,13 @@
+[
+  {
+    "q": "Container Query چه چیزی را می‌سنجد؟",
+    "o": [
+      "viewport",
+      "عرض والد container",
+      "font-size",
+      "ارتفاع body"
+    ],
+    "a": 1,
+    "e": "Container Query اندازه container والد را بررسی می‌کند."
+  }
+]

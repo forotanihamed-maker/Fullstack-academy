@@ -1,0 +1,10 @@
+{
+  "title": "تمرین: ساخت دکمه",
+  "desc": "تابعی به نام <code>makeButton</code> بنویسید که یک متن بگیرد و یک المان <code>button</code> با همان متن برگرداند (با <code>document.createElement</code>).",
+  "start": "function makeButton(text) {\n  // کد خود را اینجا بنویسید\n}\n",
+  "tests": [
+    ["makeButton('ثبت') یک button است", "makeButton('ثبت').tagName==='BUTTON'"],
+    ["متن دکمه برابر ورودی است", "makeButton('ثبت').textContent==='ثبت'"],
+    ["با متن دیگر هم کار می‌کند", "makeButton('ارسال').textContent==='ارسال'"]
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "تمرین: پالت رنگ",
+  "desc": "برای کارت یک رنگ زمینه و برای عنوان یک رنگ متن تعیین کنید و کنتراست را با DevTools بررسی کنید.",
+  "start": "<article class=\"card\"><h2>عنوان کارت</h2><p>متن کارت</p></article>",
+  "tests": [
+    [
+      "کارت وجود دارد",
+      "document.querySelector('.card') !== null"
+    ],
+    [
+      "عنوان رنگ دارد",
+      "getComputedStyle(document.querySelector('h2')).color !== 'rgb(0, 0, 0)'"
+    ],
+    [
+      "کارت رنگ زمینه دارد",
+      "getComputedStyle(document.querySelector('.card')).backgroundColor !== 'rgba(0, 0, 0, 0)'"
+    ]
+  ]
+}

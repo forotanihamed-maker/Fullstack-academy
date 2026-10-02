@@ -1,0 +1,35 @@
+[
+  {
+    "q": "کدام مورد بخشی از سیستم UI در جزوه است؟",
+    "o": [
+      "فقط hover",
+      "normal, hover, active, disabled و focus-visible",
+      "فقط animation",
+      "فقط رنگ"
+    ],
+    "a": 1,
+    "e": "کامپوننت باید حالت‌های مختلف قابل مشاهده و قابل استفاده داشته باشد."
+  },
+  {
+    "q": "بهتر است tokenهای رنگ و spacing قبل از componentها تعریف شوند چون...",
+    "o": [
+      "سیستم بصری منسجم و قابل تغییر می‌شود",
+      "specificity زیاد می‌شود",
+      "Grid حذف می‌شود",
+      "JavaScript لازم نمی‌شود"
+    ],
+    "a": 0,
+    "e": "Tokenها منبع مشترک تصمیم‌های طراحی هستند."
+  },
+  {
+    "q": "یک component حرفه‌ای حداقل چه stateهایی را باید بررسی کند؟",
+    "o": [
+      "normal, hover, focus, active, disabled",
+      "فقط normal",
+      "فقط hover",
+      "فقط loading"
+    ],
+    "a": 0,
+    "e": "stateهای interaction بخش مهم کیفیت UI هستند."
+  }
+]

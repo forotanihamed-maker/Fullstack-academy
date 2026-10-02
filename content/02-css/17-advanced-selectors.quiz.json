@@ -1,0 +1,13 @@
+[
+  {
+    "q": ":where چه Specificity دارد؟",
+    "o": [
+      "صفر",
+      "بزرگ‌ترین آرگومان",
+      "یک ID",
+      "یک element"
+    ],
+    "a": 0,
+    "e": ":where Specificity صفر دارد."
+  }
+]

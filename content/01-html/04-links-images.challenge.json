@@ -1,0 +1,29 @@
+{
+  "id": "html-ch-003",
+  "title": "Challenge: صفحه مقاله با رسانه بهینه",
+  "brief": "صفحه‌ای بساز که لینک‌ها و تصاویر آن هم semantic و هم قابل دسترس باشند.",
+  "requirements": [
+    "لینک داخلی و fragment",
+    "لینک خارجی با متن معنادار",
+    "تصویر اطلاعاتی با alt",
+    "تصویر تزئینی با alt خالی",
+    "srcset یا picture",
+    "width و height"
+  ],
+  "hints": [
+    "اول نقش تصویر را مشخص کن.",
+    "بعد بین srcset و picture انتخاب کن."
+  ],
+  "acceptanceCriteria": [
+    "هیچ لینک مبهمی مثل اینجا کلیک کنید نباشد",
+    "تصاویر alt مناسب داشته باشند",
+    "layout shift تا حد ممکن کنترل شود"
+  ],
+  "skills": [
+    "links",
+    "images",
+    "alt",
+    "responsive images",
+    "performance"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "css-ex-025",
+  "title": "Token UI",
+  "desc": "یک card با tokenها و stateهای کامل بسازید.",
+  "start": "",
+  "tests": [
+    [
+      "button",
+      "document.querySelector('.btn') !== null"
+    ],
+    [
+      "token",
+      "getComputedStyle(document.documentElement).getPropertyValue('--primary-600').trim() !== ''"
+    ]
+  ]
+}

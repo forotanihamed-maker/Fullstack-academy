@@ -1,0 +1,26 @@
+{
+  "id": "html-ch-001",
+  "title": "Challenge: بازسازی سند HTML استاندارد",
+  "brief": "یک صفحه فارسی از صفر بساز و ساختار سند را بدون کمک قالب آماده بنویس.",
+  "requirements": [
+    "DOCTYPE صحیح",
+    "html با lang=fa و dir=rtl",
+    "charset و viewport",
+    "title توصیفی",
+    "یک h1 و حداقل دو بخش محتوایی"
+  ],
+  "hints": [
+    "از head و body شروع کن.",
+    "قبل از CSS ساختار معنا را بررسی کن."
+  ],
+  "acceptanceCriteria": [
+    "HTML بدون خطای ساختاری مهم باشد",
+    "title و lang صحیح باشند",
+    "ساختار در DevTools قابل درک باشد"
+  ],
+  "skills": [
+    "document structure",
+    "metadata",
+    "DOM"
+  ]
+}

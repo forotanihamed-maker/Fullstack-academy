@@ -1,0 +1,19 @@
+{
+  "title": "تمرین: جدول برنامه هفتگی",
+  "desc": "یک جدول با caption، thead، tbody، th و scope بسازید.",
+  "start": "<table>\n  <caption>برنامه هفتگی</caption>\n  <thead><tr><th scope=\"col\">روز</th><th scope=\"col\">ساعت</th><th scope=\"col\">درس</th></tr></thead>\n  <tbody><tr><th scope=\"row\">شنبه</th><td>8</td><td>HTML</td></tr></tbody>\n</table>",
+  "tests": [
+    [
+      "caption وجود دارد",
+      "document.querySelector('caption') !== null"
+    ],
+    [
+      "حداقل دو th دارد",
+      "document.querySelectorAll('th').length >= 2"
+    ],
+    [
+      "scope استفاده شده",
+      "document.querySelectorAll('th[scope]').length >= 2"
+    ]
+  ]
+}

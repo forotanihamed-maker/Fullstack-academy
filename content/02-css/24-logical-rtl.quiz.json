@@ -1,0 +1,35 @@
+[
+  {
+    "q": "کدام property با جهت inline سازگارتر است؟",
+    "o": [
+      "margin-left",
+      "margin-inline-start",
+      "padding-right",
+      "left"
+    ],
+    "a": 1,
+    "e": "margin-inline-start با جهت نوشتار سازگار است."
+  },
+  {
+    "q": "کدام property برای فاصله‌ی ابتدای محور inline مناسب است؟",
+    "o": [
+      "margin-inline-start",
+      "margin-left فقط",
+      "top",
+      "float"
+    ],
+    "a": 0,
+    "e": "inline-start با direction متن سازگار است."
+  },
+  {
+    "q": "برای متن دوطرفه معمولاً کدام انتخاب بهتر است؟",
+    "o": [
+      "text-align:start",
+      "text-align:left همیشه",
+      "text-align:999",
+      "position:start"
+    ],
+    "a": 0,
+    "e": "start با جهت متن سازگار می‌شود."
+  }
+]

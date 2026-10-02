@@ -1,0 +1,23 @@
+{
+  "title": "تمرین: لینک و تصویر",
+  "desc": "یک لینک به <code>#contact</code>، یک لینک خارجی با <code>target=\"_blank\"</code> و یک تصویر با <code>alt</code> بسازید. پایین صفحه یک المان با <code>id=\"contact\"</code> قرار دهید.",
+  "start": "<a href=\"/about\">درباره</a>\n<a href=\"https://example.com\">سایت</a>\n<img src=\"photo.jpg\">\n<div>ارتباط</div>",
+  "tests": [
+    [
+      "لینک anchor وجود دارد",
+      "document.querySelector(\"a[href=\\\"#contact\\\"]\") !== null"
+    ],
+    [
+      "لینک خارجی target blank دارد",
+      "document.querySelector(\"a[target=\\\"_blank\\\"]\") !== null"
+    ],
+    [
+      "تصویر alt دارد",
+      "document.querySelector(\"img[alt]\") !== null"
+    ],
+    [
+      "contact وجود دارد",
+      "document.querySelector(\"#contact\") !== null"
+    ]
+  ]
+}

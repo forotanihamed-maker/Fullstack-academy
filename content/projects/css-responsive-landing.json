@@ -1,0 +1,20 @@
+{
+  "id": "css-responsive-landing",
+  "slug": "css-responsive-landing",
+  "title": "Skill Project: Landing Page ریسپانسیو",
+  "type": "skill",
+  "description": "دو صفحه Landing و Product را با CSS متوسط، Flexbox، Grid، Position، Responsive و Animation به یک رابط واقعی تبدیل کنید.",
+  "difficulty": "intermediate",
+  "prerequisites": ["01-html/01-intro", "01-html/05-semantic", "02-css/01-css-what", "02-css/05-box-model", "02-css/06-background", "02-css/07-font-text", "02-css/08-display", "02-css/09-position", "02-css/10-flexbox", "02-css/11-grid", "02-css/12-responsive", "02-css/13-animation"],
+  "technologies": ["HTML", "CSS"],
+  "skills": ["background", "typography", "display", "position", "flexbox", "grid", "responsive", "transition", "animation", "accessibility"],
+  "requirements": ["Header sticky", "Hero با CTA", "شبکه ویژگی‌ها", "بخش نظرات", "FAQ", "فرم خبرنامه", "Product gallery", "Responsive mobile/tablet/desktop"],
+  "milestones": [
+    {"id":"m1-foundation","title":"سیستم بصری و تایپوگرافی","description":"Background، فونت، متن و display را روی صفحات اعمال کنید.","requiredLessons":["02-css/06-background","02-css/07-font-text","02-css/08-display"],"requiredSkills":["background","typography","display"],"tasks":["palette","typography","hero background","button/link states"],"checkpoint":"صفحه خوانا و از نظر بصری منسجم باشد."},
+    {"id":"m2-layout","title":"Position، Flexbox و Grid","description":"اسکلت responsive را با ابزار درست بسازید.","requiredLessons":["02-css/09-position","02-css/10-flexbox","02-css/11-grid"],"requiredSkills":["position","flexbox","grid"],"tasks":["sticky header","flex navigation","grid feature cards","product gallery"],"checkpoint":"layout بدون استفاده از margin hack قابل نگهداری باشد."},
+    {"id":"m3-responsive-motion","title":"Responsive و Motion","description":"Mobile-first، breakpointها و حرکت‌های کوتاه را اضافه کنید.","requiredLessons":["02-css/12-responsive","02-css/13-animation"],"requiredSkills":["responsive","transition","animation"],"tasks":["320/768/1440 tests","media queries","reduced motion","hover/focus"],"checkpoint":"در عرض‌های هدف اسکرول افقی وجود نداشته باشد و motion قابل کنترل باشد."}
+  ],
+  "deliverables": ["index.html", "product.html", "styles.css", "README کوتاه", "گزارش تست responsive"],
+  "acceptanceCriteria": ["بدون فریمورک CSS و JavaScript", "mobile-first", "Flexbox و Grid هر دو استفاده شوند", "بدون !important", "تصاویر max-width:100% باشند", "hover و visible focus وجود داشته باشد", "prefers-reduced-motion رعایت شود", "در 320، 768 و 1440 اسکرول افقی نباشد"],
+  "extensionIdeas": ["افزودن JavaScript برای FAQ و منوی موبایل", "تبدیل صفحه محصول به React component", "اتصال به API در Journey فروشگاه"]
+}

@@ -1,5 +1,14 @@
 ---
 title: تگ، المان و ویژگی
+description: تفاوت tag و element، ویژگی‌ها، nesting و عناصر تهی را یاد می‌گیرید.
+difficulty: beginner
+estimatedMinutes: 18
+objectives: ["تشخیص tag و element", "استفاده از attributes", "نوشتن nesting صحیح"]
+concepts: ["element", "tag", "attribute", "id", "class", "nesting", "void element", "entity"]
+prerequisites: ["01-html/01-intro"]
+relatedLessons: ["01-html/01-intro", "01-html/03-text"]
+relatedProjects: ["html-foundations-site"]
+nextLesson: 03-text
 ---
 
 ## تگ و المان

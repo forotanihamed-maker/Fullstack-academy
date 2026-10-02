@@ -1,0 +1,13 @@
+{
+  "title": "Design Tokens",
+  "desc": "یک کارت با Tokenهای رنگ و فاصله بسازید.",
+  "html": "<article class='card'><h2>Card</h2><p>Token driven UI</p><button>عملیات</button></article>",
+  "css": ":root{--primary:#2563eb;--space:1rem;--radius:12px}.card{padding:var(--space);border-radius:var(--radius);border:1px solid #ddd}.card button{background:var(--primary);color:white;padding:.5rem 1rem;border:0;border-radius:8px}",
+  "js": "",
+  "checks": [
+    [
+      "Token exists",
+      "getComputedStyle(document.documentElement).getPropertyValue('--primary').trim() !== ''"
+    ]
+  ]
+}

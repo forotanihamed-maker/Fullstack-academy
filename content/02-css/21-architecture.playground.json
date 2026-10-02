@@ -1,0 +1,8 @@
+{
+  "title": "BEM Card",
+  "desc": "یک کارت BEM بسازید.",
+  "html": "<article class='card card--featured'><h2 class='card__title'>عنوان</h2></article>",
+  "css": ".card{padding:1rem}.card__title{margin:0}.card--featured{border:2px solid #2563eb}",
+  "js": "",
+  "checks": []
+}

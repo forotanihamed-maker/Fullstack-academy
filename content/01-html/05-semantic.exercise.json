@@ -1,0 +1,27 @@
+{
+  "title": "تمرین: اسکلت معنایی",
+  "desc": "یک اسکلت صفحه بسازید که شامل <code>header</code>، <code>nav</code>، دقیقاً یک <code>main</code>، یک <code>article</code> و <code>footer</code> باشد.",
+  "start": "<div class=\"header\">عنوان</div>\n<div class=\"main\">محتوا</div>\n<div>پست</div>\n<div>پاورقی</div>",
+  "tests": [
+    [
+      "header وجود دارد",
+      "document.querySelector(\"header\") !== null"
+    ],
+    [
+      "nav وجود دارد",
+      "document.querySelector(\"nav\") !== null"
+    ],
+    [
+      "دقیقاً یک main وجود دارد",
+      "document.querySelectorAll(\"main\").length === 1"
+    ],
+    [
+      "article وجود دارد",
+      "document.querySelector(\"article\") !== null"
+    ],
+    [
+      "footer وجود دارد",
+      "document.querySelector(\"footer\") !== null"
+    ]
+  ]
+}

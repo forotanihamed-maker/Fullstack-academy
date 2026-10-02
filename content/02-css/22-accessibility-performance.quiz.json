@@ -1,0 +1,46 @@
+[
+  {
+    "q": "کدام media query برای کاهش motion است؟",
+    "o": [
+      "prefers-motion",
+      "prefers-reduced-motion",
+      "reduce-animation",
+      "motion:none"
+    ],
+    "a": 1,
+    "e": "@media (prefers-reduced-motion: reduce) استفاده می‌شود."
+  },
+  {
+    "q": "چرا outline:none بدون جایگزین مشکل است؟",
+    "o": [
+      "focus keyboard را نامشخص می‌کند",
+      "Grid را حذف می‌کند",
+      "font را بزرگ می‌کند",
+      "HTML را تغییر می‌دهد"
+    ],
+    "a": 0,
+    "e": "کاربر keyboard باید بتواند عنصر دارای focus را ببیند."
+  },
+  {
+    "q": "کدام تکنیک برای کاهش motion سیستم کاربر استفاده می‌شود؟",
+    "o": [
+      "prefers-reduced-motion",
+      "prefers-dark-only",
+      "min-width",
+      "z-index"
+    ],
+    "a": 0,
+    "e": "این media feature preference کاربر را گزارش می‌کند."
+  },
+  {
+    "q": "visually-hidden چه تفاوتی با display:none دارد؟",
+    "o": [
+      "اولی می‌تواند برای screen reader قابل دسترس بماند",
+      "هیچ تفاوتی ندارد",
+      "دومی برای keyboard بهتر است",
+      "اولی عنصر را حذف می‌کند"
+    ],
+    "a": 0,
+    "e": "visually-hidden عنصر را از دید بصری پنهان می‌کند ولی می‌تواند در accessibility tree باقی بماند."
+  }
+]

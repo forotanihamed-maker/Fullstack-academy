@@ -1,0 +1,8 @@
+{
+  "title": "Focus Lab",
+  "desc": "حالت focus قابل مشاهده بسازید.",
+  "html": "<button>ذخیره</button>",
+  "css": "button:focus-visible{outline:3px solid #2563eb;outline-offset:3px}@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}",
+  "js": "",
+  "checks": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "css-ch-002",
+  "title": "Challenge: ساخت سیستم UI با CSS",
+  "brief": "یک صفحه Style Guide کوچک بسازید که یک Button، Card، Badge و Alert را با Tokens و حالت‌های دسترس‌پذیر نمایش دهد.",
+  "requirements": [
+    "رنگ‌ها و spacing فقط از Custom Properties بیایند",
+    "BEM برای componentها استفاده شود",
+    "Button حالت hover، active، disabled و focus-visible داشته باشد",
+    "Card با Grid/Flex و layout واکنشگرا ساخته شود",
+    "RTL با Logical Properties پشتیبانی شود",
+    "prefers-reduced-motion رعایت شود",
+    "هیچ ID برای styling استفاده نشود",
+    "بدون framework و بدون JavaScript"
+  ],
+  "hints": [
+    "اول :root را برای Tokenها بساز",
+    "Selectorها را کوتاه نگه دار",
+    "برای focus از :focus-visible استفاده کن",
+    "برای جهت از margin-inline و padding-inline استفاده کن"
+  ],
+  "acceptanceCriteria": [
+    "در 320، 768 و 1440 بدون اسکرول افقی باشد",
+    "کنتراست متن معمولی حداقل 4.5:1 باشد",
+    "همه عناصر تعاملی focus قابل مشاهده داشته باشند",
+    "با تغییر یک Token رنگ اصلی componentها تغییر کند",
+    "هیچ !important مگر reduced-motion وجود نداشته باشد"
+  ],
+  "skills": [
+    "custom properties",
+    "clamp",
+    "BEM",
+    "logical properties",
+    "responsive layout",
+    "accessibility"
+  ]
+}

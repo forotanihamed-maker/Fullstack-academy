@@ -1,0 +1,23 @@
+{
+  "title": "تمرین: ممیزی HTML",
+  "desc": "یک صفحه مقاله را طوری کامل کنید که title، lang، heading، semantic landmarks، alt و keyboard flow داشته باشد.",
+  "start": "<!DOCTYPE html>\n<html lang=\"fa\" dir=\"rtl\">\n<head><meta charset=\"UTF-8\"><title>مقاله HTML</title></head>\n<body>\n<a href=\"#main\">پرش به محتوای اصلی</a>\n<main id=\"main\"><h1>عنوان مقاله</h1><img src=\"cover.jpg\" width=\"800\" height=\"450\" alt=\"تصویر معرفی مقاله\"></main>\n</body>\n</html>",
+  "tests": [
+    [
+      "lang فارسی است",
+      "document.documentElement.lang === 'fa'"
+    ],
+    [
+      "title وجود دارد",
+      "document.title.length > 0"
+    ],
+    [
+      "main وجود دارد",
+      "document.querySelector('main') !== null"
+    ],
+    [
+      "تصویر alt دارد",
+      "document.querySelector('img').hasAttribute('alt')"
+    ]
+  ]
+}

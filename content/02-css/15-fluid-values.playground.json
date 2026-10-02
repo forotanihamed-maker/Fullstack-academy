@@ -1,0 +1,8 @@
+{
+  "title": "Fluid Heading",
+  "desc": "یک h1 با اندازه سیال بسازید.",
+  "html": "<h1>عنوان سیال</h1>",
+  "css": "h1{font-size:clamp(1.75rem,1.2rem + 2.5vw,3rem)}",
+  "js": "",
+  "checks": []
+}

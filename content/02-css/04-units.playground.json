@@ -1,0 +1,17 @@
+{
+  "title": "Try It: واحدها",
+  "desc": "رفتار rem، em و ch را روی یک کارت و متن بررسی کنید.",
+  "html": "<article class=\"card\"><h2>واحدهای CSS</h2><p>این متن برای بررسی عرض خوانا و اندازه فونت است.</p><button>ادامه</button></article>",
+  "css": "html { font-size: 100%; }\n.card { max-width: 40rem; padding: 1rem; }\np { max-width: 65ch; }\nbutton { padding: .75em 1.5em; }",
+  "js": "",
+  "checks": [
+    [
+      "کارت حداکثر عرض دارد",
+      "getComputedStyle(document.querySelector('.card')).maxWidth !== 'none'"
+    ],
+    [
+      "پاراگراف max-width دارد",
+      "getComputedStyle(document.querySelector('p')).maxWidth !== 'none'"
+    ]
+  ]
+}

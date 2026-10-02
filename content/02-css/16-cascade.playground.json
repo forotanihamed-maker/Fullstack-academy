@@ -1,0 +1,13 @@
+{
+  "title": "Cascade Lab",
+  "desc": "چهار قانون متعارض را بررسی کنید.",
+  "html": "<p id='intro' class='note'>متن</p>",
+  "css": "p{color:black}.note{color:blue}p.note{color:green}#intro{color:red}",
+  "js": "",
+  "checks": [
+    [
+      "element exists",
+      "document.querySelector('#intro') !== null"
+    ]
+  ]
+}

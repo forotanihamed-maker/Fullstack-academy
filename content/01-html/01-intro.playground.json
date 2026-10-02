@@ -1,12 +1,11 @@
 {
-  "title": "تمرین عملی: اولین صفحه",
-  "desc": "داخل تب HTML یک عنوان <code>h1</code> با اسم خودتان و یک پاراگراف <code>p</code> درباره‌ی خودتان بنویسید. نتیجه را سمت چپ می‌بینید و چک‌لیست خودکار پایین پر می‌شود.",
-  "html": "<!-- کد خود را اینجا بنویسید -->\n",
-  "css": "",
+  "title": "Try It: اولین صفحه HTML",
+  "desc": "مقدار h1 و title را تغییر دهید و نتیجه را در پیش‌نمایش ببینید.",
+  "html": "<h1>اولین صفحه من</h1>\n<p>من در حال یادگیری HTML هستم.</p>",
+  "css": "h1 { color: #245; }",
   "js": "",
   "checks": [
-    ["یک عنوان h1 دارد", "!!document.querySelector('h1')"],
-    ["h1 متن دارد", "!!document.querySelector('h1') && document.querySelector('h1').textContent.trim().length > 0"],
-    ["یک پاراگراف p دارد و خالی نیست", "!!document.querySelector('p') && document.querySelector('p').textContent.trim().length > 0"]
+    ["h1 وجود دارد", "document.querySelector('h1') !== null"],
+    ["یک paragraph وجود دارد", "document.querySelector('p') !== null"]
   ]
 }

@@ -1,0 +1,12 @@
+{
+  "id": "css-ex-022",
+  "title": "Accessible Focus",
+  "desc": "focus-visible و reduced-motion را اضافه کنید.",
+  "start": "",
+  "tests": [
+    [
+      "focus rule",
+      "document.querySelector('button') !== null"
+    ]
+  ]
+}

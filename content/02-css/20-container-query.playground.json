@@ -1,0 +1,8 @@
+{
+  "title": "Container Card",
+  "desc": "Card را با عرض container تغییر دهید.",
+  "html": "<div class='wrapper'><article class='card'>Card</article></div>",
+  "css": ".wrapper{container-type:inline-size}.card{padding:1rem}@container (min-width:480px){.card{display:grid;grid-template-columns:160px 1fr}}",
+  "js": "",
+  "checks": []
+}

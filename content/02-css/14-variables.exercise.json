@@ -1,0 +1,16 @@
+{
+  "id": "css-ex-014",
+  "title": "ساخت Tokenها",
+  "desc": "سه رنگ و سه فاصله را به Custom Property تبدیل کنید.",
+  "start": "",
+  "tests": [
+    [
+      "primary token",
+      "getComputedStyle(document.documentElement).getPropertyValue('--color-primary').trim() !== ''"
+    ],
+    [
+      "spacing token",
+      "getComputedStyle(document.documentElement).getPropertyValue('--space-4').trim() !== ''"
+    ]
+  ]
+}

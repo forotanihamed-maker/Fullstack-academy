@@ -1,0 +1,21 @@
+{
+  "title": "Try It: Box Model",
+  "desc": "padding، border و margin را تغییر دهید و نتیجه را در DevTools ببینید.",
+  "html": "<div class=\"box\">Box Model</div>",
+  "css": ".box { width: 300px; padding: 1rem; border: 4px solid #1d4ed8; margin: 1.5rem auto; box-sizing: border-box; }",
+  "js": "",
+  "checks": [
+    [
+      "box وجود دارد",
+      "document.querySelectorAll('.box').length === 1"
+    ],
+    [
+      "box border دارد",
+      "parseFloat(getComputedStyle(document.querySelector('.box')).borderTopWidth) > 0"
+    ],
+    [
+      "box padding دارد",
+      "parseFloat(getComputedStyle(document.querySelector('.box')).paddingTop) > 0"
+    ]
+  ]
+}

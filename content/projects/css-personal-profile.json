@@ -1,0 +1,124 @@
+{
+  "id": "css-personal-profile",
+  "slug": "css-personal-profile",
+  "title": "Skill Project: استایل‌دهی صفحه معرفی شخصی",
+  "type": "skill",
+  "description": "صفحه معرفی شخصی ساخته‌شده در HTML را با CSS خارجی به یک رابط یکپارچه و خوانا تبدیل کنید؛ پروژه عمداً بدون Flexbox و Grid است تا مباحث پایه CSS تثبیت شوند.",
+  "difficulty": "beginner",
+  "prerequisites": [
+    "01-html/01-intro",
+    "01-html/03-text",
+    "02-css/01-css-what",
+    "02-css/02-selectors",
+    "02-css/03-color",
+    "02-css/04-units",
+    "02-css/05-box-model"
+  ],
+  "technologies": [
+    "HTML",
+    "CSS"
+  ],
+  "skills": [
+    "selectors",
+    "colors",
+    "units",
+    "box-model",
+    "display",
+    "typography",
+    "backgrounds",
+    "accessibility"
+  ],
+  "requirements": [
+    "یک فایل CSS خارجی",
+    "فونت و رنگ‌های هماهنگ",
+    "ناوبری افقی با display",
+    "Hero با پس‌زمینه رنگی، گرادیان یا تصویر",
+    "کارت‌های علاقه‌مندی",
+    "hover و focus واضح برای لینک‌ها",
+    "footer"
+  ],
+  "milestones": [
+    {
+      "id": "m1-css-foundations",
+      "title": "اتصال و انتخاب",
+      "description": "CSS خارجی را وصل کنید و selectorهای پایه را برای بخش‌های صفحه تعریف کنید.",
+      "requiredLessons": [
+        "02-css/01-css-what",
+        "02-css/02-selectors"
+      ],
+      "requiredSkills": [
+        "external-css",
+        "selectors"
+      ],
+      "tasks": [
+        "اتصال styles.css",
+        "ساخت classهای اصلی",
+        "حذف نیاز به id برای styling"
+      ],
+      "checkpoint": "تمام بخش‌های اصلی صفحه با selectorهای قابل نگهداری استایل گرفته باشند."
+    },
+    {
+      "id": "m2-visual-system",
+      "title": "رنگ، واحد و Box Model",
+      "description": "پالت رنگ، typography، فاصله‌ها و جعبه‌های صفحه را تنظیم کنید.",
+      "requiredLessons": [
+        "02-css/03-color",
+        "02-css/04-units",
+        "02-css/05-box-model"
+      ],
+      "requiredSkills": [
+        "color",
+        "rem",
+        "box-model"
+      ],
+      "tasks": [
+        "ساخت palette",
+        "انتقال فونت و فاصله‌ها به rem",
+        "فعال‌سازی border-box",
+        "تنظیم card و hero"
+      ],
+      "checkpoint": "ابعاد و فاصله‌ها قابل پیش‌بینی باشند و متن خوانایی مناسب داشته باشد."
+    },
+    {
+      "id": "m3-interaction-and-qa",
+      "title": "جزئیات و کنترل کیفیت",
+      "description": "display، hover/focus و معیارهای پذیرش را تکمیل کنید.",
+      "requiredLessons": [
+        "02-css/05-box-model"
+      ],
+      "requiredSkills": [
+        "display",
+        "focus-visible",
+        "contrast"
+      ],
+      "tasks": [
+        "ناوبری افقی",
+        "hover و focus-visible",
+        "تست contrast",
+        "تست zoom 200%"
+      ],
+      "checkpoint": "صفحه در زوم 200% قابل استفاده باشد و معیارهای دسترس‌پذیری پروژه رعایت شوند."
+    }
+  ],
+  "deliverables": [
+    "index.html",
+    "styles.css",
+    "README کوتاه",
+    "تصویر یا توضیح تست زوم و کنتراست"
+  ],
+  "acceptanceCriteria": [
+    "فقط یک فایل CSS خارجی استفاده شده است",
+    "بدون Grid و Flexbox",
+    "بدون style inline",
+    "اندازه فونت و فاصله‌ها با rem هستند",
+    "box-sizing: border-box به‌صورت سراسری اعمال شده است",
+    "hover و visible focus برای لینک‌ها مشخص است",
+    "هیچ id برای styling استفاده نشده است",
+    "کنتراست متن معمولی حداقل 4.5 به 1 است",
+    "صفحه در zoom 200% قابل استفاده است"
+  ],
+  "extensionIdeas": [
+    "در مرحله CSS متوسط، نسخه responsive را با Flexbox و Grid بسازید",
+    "در مرحله JavaScript، دکمه تعاملی معرفی را اضافه کنید"
+  ]
+}

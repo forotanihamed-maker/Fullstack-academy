@@ -1,0 +1,23 @@
+{
+  "title": "تمرین: اولین فایل CSS",
+  "desc": "یک h1 و p بسازید و برای آن‌ها رنگ و اندازه تعریف کنید.",
+  "start": "<h1>صفحه من</h1>\n<p>در حال یادگیری CSS هستم.</p>",
+  "tests": [
+    [
+      "یک h1 وجود دارد",
+      "document.querySelectorAll('h1').length === 1"
+    ],
+    [
+      "یک p وجود دارد",
+      "document.querySelectorAll('p').length === 1"
+    ],
+    [
+      "h1 استایل شده است",
+      "getComputedStyle(document.querySelector('h1')).color !== 'rgb(0, 0, 0)'"
+    ],
+    [
+      "p اندازه مشخص دارد",
+      "parseFloat(getComputedStyle(document.querySelector('p')).fontSize) > 0"
+    ]
+  ]
+}

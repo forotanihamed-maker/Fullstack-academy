@@ -1,0 +1,26 @@
+{
+  "id": "html-ch-002",
+  "title": "Challenge: HTML Debugging Lab",
+  "brief": "یک قطعه HTML عمداً خراب را اصلاح کن و دلیل هر اصلاح را بنویس.",
+  "requirements": [
+    "حداقل یک nesting خطادار",
+    "id تکراری",
+    "attribute اشتباه",
+    "یک void element"
+  ],
+  "hints": [
+    "اول tree را روی کاغذ رسم کن.",
+    "بعد id و attributeها را بررسی کن."
+  ],
+  "acceptanceCriteria": [
+    "Nesting معتبر باشد",
+    "idهای تکراری حذف شوند",
+    "attribute مناسب استفاده شود"
+  ],
+  "skills": [
+    "elements",
+    "nesting",
+    "attributes",
+    "debugging"
+  ]
+}

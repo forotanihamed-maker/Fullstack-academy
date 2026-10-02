@@ -1,0 +1,13 @@
+{
+  "title": "Mini Design System",
+  "desc": "یک دکمه و کارت با Token بسازید.",
+  "html": "<article class='card'><h2>محصول</h2><p>توضیح</p><button class='btn'>خرید</button></article>",
+  "css": ":root{--primary-600:#2563eb;--space-4:1rem;--radius:12px}.card{padding:var(--space-4);border-radius:var(--radius);border:1px solid #e2e8f0}.btn{padding:.6rem 1rem;border:0;border-radius:var(--radius);background:var(--primary-600);color:white}.btn:focus-visible{outline:3px solid var(--primary-600);outline-offset:3px}",
+  "js": "",
+  "checks": [
+    [
+      "token",
+      "getComputedStyle(document.documentElement).getPropertyValue('--primary-600').trim() !== ''"
+    ]
+  ]
+}

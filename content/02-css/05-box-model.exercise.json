@@ -1,0 +1,23 @@
+{
+  "title": "تمرین: Box Model",
+  "desc": "یک کارت با width، padding، border و margin بسازید و box-sizing را border-box قرار دهید.",
+  "start": "<div class=\"card\">کارت من</div>",
+  "tests": [
+    [
+      "کارت وجود دارد",
+      "document.querySelector('.card') !== null"
+    ],
+    [
+      "box-sizing روی border-box است",
+      "getComputedStyle(document.querySelector('.card')).boxSizing === 'border-box'"
+    ],
+    [
+      "padding وجود دارد",
+      "parseFloat(getComputedStyle(document.querySelector('.card')).paddingTop) > 0"
+    ],
+    [
+      "border وجود دارد",
+      "parseFloat(getComputedStyle(document.querySelector('.card')).borderTopWidth) > 0"
+    ]
+  ]
+}

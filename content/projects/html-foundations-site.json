@@ -1,0 +1,117 @@
+{
+  "id": "html-foundations-site",
+  "slug": "html-foundations-site",
+  "title": "Mini Project: وب‌سایت آموزشگاه",
+  "type": "micro",
+  "description": "یک وب‌سایت چندصفحه‌ای برای یک آموزشگاه بسازید و تمام مهارت‌های پنج درس اول HTML را در آن ترکیب کنید.",
+  "difficulty": "beginner",
+  "prerequisites": [
+    "01-html/01-intro",
+    "01-html/02-elements",
+    "01-html/03-text",
+    "01-html/04-links-images",
+    "01-html/05-semantic"
+  ],
+  "technologies": [
+    "HTML5"
+  ],
+  "skills": [
+    "document-structure",
+    "elements",
+    "text",
+    "links",
+    "images",
+    "semantic-html"
+  ],
+  "requirements": [
+    "صفحه Home با header و nav",
+    "صفحه Courses با فهرست دوره‌ها",
+    "صفحه Course Detail برای یک دوره",
+    "صفحه About",
+    "صفحه Contact با اطلاعات ارتباطی",
+    "استفاده از تصویر با alt مناسب",
+    "استفاده از heading hierarchy",
+    "استفاده از semantic HTML"
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "title": "ساخت صفحات",
+      "description": "صفحات اصلی پروژه را با HTML بسازید.",
+      "requiredLessons": [
+        "01-html/01-intro",
+        "01-html/02-elements"
+      ],
+      "requiredSkills": [
+        "document-structure",
+        "elements"
+      ],
+      "tasks": [
+        "ساخت index.html",
+        "ساخت courses.html",
+        "ساخت about.html",
+        "ساخت contact.html"
+      ],
+      "checkpoint": "همه صفحات با ساختار HTML5 معتبر شروع شوند."
+    },
+    {
+      "id": "m2",
+      "title": "محتوا و ناوبری",
+      "description": "متن، heading، list، لینک و تصویر را اضافه کنید.",
+      "requiredLessons": [
+        "01-html/03-text",
+        "01-html/04-links-images"
+      ],
+      "requiredSkills": [
+        "headings",
+        "lists",
+        "links",
+        "images"
+      ],
+      "tasks": [
+        "ساخت منوی مشترک",
+        "افزودن لیست دوره‌ها",
+        "افزودن تصویر و alt",
+        "افزودن anchor برای بخش تماس"
+      ],
+      "checkpoint": "کاربر باید بتواند بین صفحات حرکت کند."
+    },
+    {
+      "id": "m3",
+      "title": "Semantic Structure",
+      "description": "ساختار صفحات را برای انسان و فناوری‌های کمکی واضح کنید.",
+      "requiredLessons": [
+        "01-html/05-semantic"
+      ],
+      "requiredSkills": [
+        "semantic-html",
+        "accessibility"
+      ],
+      "tasks": [
+        "header/nav/main/footer",
+        "article یا section مناسب",
+        "aside برای محتوای جانبی"
+      ],
+      "checkpoint": "بدون CSS نیز ساختار صفحه باید قابل فهم باشد."
+    }
+  ],
+  "deliverables": [
+    "پنج فایل HTML یا بیشتر",
+    "README کوتاه",
+    "ساختار پوشه‌ی تصاویر",
+    "لینک‌دهی داخلی کامل"
+  ],
+  "acceptanceCriteria": [
+    "تمام صفحات باز می‌شوند",
+    "لینک‌های داخلی کار می‌کنند",
+    "تصاویر alt مناسب دارند",
+    "هر صفحه یک main دارد",
+    "ساختار heading منطقی است",
+    "از semantic elements در layout استفاده شده است"
+  ],
+  "extensionIdeas": [
+    "افزودن صفحه ثبت‌نام",
+    "افزودن جدول برنامه‌ی کلاس‌ها",
+    "افزودن فرم تماس در مرحله Forms"
+  ]
+}

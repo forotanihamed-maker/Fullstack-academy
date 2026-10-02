@@ -1,0 +1,12 @@
+{
+  "id": "css-ex-018",
+  "title": "Stacking Context",
+  "desc": "یک سیستم z-index بسازید.",
+  "start": "",
+  "tests": [
+    [
+      "modal token",
+      "getComputedStyle(document.documentElement).getPropertyValue('--z-modal').trim() !== ''"
+    ]
+  ]
+}

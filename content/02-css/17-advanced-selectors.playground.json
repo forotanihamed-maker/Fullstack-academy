@@ -1,0 +1,8 @@
+{
+  "title": "Advanced Selectors",
+  "desc": "یک دکمه disabled و enabled بسازید.",
+  "html": "<button>فعال</button><button disabled>غیرفعال</button>",
+  "css": "button:not(:disabled):hover{background:#1d4ed8}button:focus-visible{outline:3px solid #2563eb}",
+  "js": "",
+  "checks": []
+}

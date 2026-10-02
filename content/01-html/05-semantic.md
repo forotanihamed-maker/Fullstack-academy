@@ -1,5 +1,14 @@
 ---
 title: HTML معنایی (Semantic HTML)
+description: ساختار صفحه را با header، nav، main، section، article، aside و footer معنا‌دار می‌کنید.
+difficulty: beginner
+estimatedMinutes: 22
+objectives: ["تشخیص عناصر semantic", "ساخت layout معنایی", "ارتباط semantic HTML با accessibility و SEO"]
+concepts: ["header", "nav", "main", "section", "article", "aside", "footer", "accessibility", "SEO"]
+prerequisites: ["01-html/04-links-images"]
+relatedLessons: ["01-html/04-links-images"]
+relatedProjects: ["html-foundations-site"]
+nextLesson: 06-tables
 ---
 
 تا اینجا برای هر چیزی می‌شد از `<div>` استفاده کرد، ولی `<div>` هیچ معنایی ندارد. **HTML معنایی** یعنی هر بخش از صفحه را با تگی بنویسیم که **نقش آن بخش را بیان می‌کند**. این کار سه فایده‌ی بزرگ دارد:

@@ -1,0 +1,12 @@
+{
+  "id": "css-ex-020",
+  "title": "Container Query",
+  "desc": "یک container قابل پرس‌وجو تعریف کنید.",
+  "start": "",
+  "tests": [
+    [
+      "container type",
+      "getComputedStyle(document.querySelector('.wrapper')).containerType === 'inline-size'"
+    ]
+  ]
+}

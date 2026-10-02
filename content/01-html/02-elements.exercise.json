@@ -1,0 +1,19 @@
+{
+  "title": "تمرین: ساختار المان",
+  "desc": "یک لینک با <code>href</code>، یک پاراگراف با <code>class=\"intro\"</code> و یک <code>strong</code> داخل پاراگراف بسازید.",
+  "start": "<p>یک متن <span>نمونه</span></p>\n<a href=\"#\">لینک</a>",
+  "tests": [
+    [
+      "یک لینک با href وجود دارد",
+      "document.querySelector(\"a[href]\") !== null"
+    ],
+    [
+      "پاراگراف کلاس intro دارد",
+      "document.querySelector(\"p.intro\") !== null"
+    ],
+    [
+      "strong داخل پاراگراف است",
+      "document.querySelector(\"p strong\") !== null"
+    ]
+  ]
+}

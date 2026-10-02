@@ -1,0 +1,27 @@
+{
+  "id": "html-ch-002",
+  "title": "Challenge: صفحه مقاله معنایی",
+  "brief": "یک صفحه مقاله‌ی وبلاگی بسازید که ساختار اصلی آن با عناصر semantic مشخص باشد.",
+  "requirements": [
+    "header شامل عنوان و nav",
+    "main شامل article",
+    "article شامل h2 و چند paragraph",
+    "aside برای مطالب مرتبط",
+    "footer برای اطلاعات پایانی"
+  ],
+  "hints": [
+    "main را فقط یک بار استفاده کنید.",
+    "اگر محتوا مستقل است article مناسب‌تر است."
+  ],
+  "acceptanceCriteria": [
+    "header و nav وجود دارند",
+    "دقیقاً یک main وجود دارد",
+    "article داخل main قرار دارد",
+    "aside و footer وجود دارند"
+  ],
+  "skills": [
+    "semantic-html",
+    "accessibility",
+    "page-structure"
+  ]
+}

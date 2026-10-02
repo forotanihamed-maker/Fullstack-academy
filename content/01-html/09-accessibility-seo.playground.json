@@ -1,0 +1,21 @@
+{
+  "title": "Try It: دسترس‌پذیری فرم",
+  "desc": "label، focus و aria-describedby را بررسی کنید.",
+  "html": "<a href=\"#main\">پرش به محتوای اصلی</a>\n<form>\n<label for=\"password\">رمز عبور</label>\n<input id=\"password\" type=\"password\" aria-describedby=\"hint\">\n<p id=\"hint\">حداقل ۸ کاراکتر</p>\n<button type=\"submit\">ارسال</button>\n</form>\n<main id=\"main\"><h1>محتوا</h1></main>",
+  "css": "a:focus,button:focus,input:focus{outline:3px solid #2563eb}",
+  "js": "",
+  "checks": [
+    [
+      "skip link وجود دارد",
+      "document.querySelector('a[href=\\\"#main\\\"]') !== null"
+    ],
+    [
+      "label وجود دارد",
+      "document.querySelector('label[for=password]') !== null"
+    ],
+    [
+      "describedby وجود دارد",
+      "document.querySelector('#password').getAttribute('aria-describedby') === 'hint'"
+    ]
+  ]
+}

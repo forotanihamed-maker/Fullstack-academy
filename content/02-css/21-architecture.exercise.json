@@ -1,0 +1,12 @@
+{
+  "id": "css-ex-021",
+  "title": "BEM",
+  "desc": "Card را با Block، Element و Modifier نام‌گذاری کنید.",
+  "start": "",
+  "tests": [
+    [
+      "BEM title",
+      "document.querySelector('.card__title') !== null"
+    ]
+  ]
+}

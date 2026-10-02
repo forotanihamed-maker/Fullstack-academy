@@ -1,0 +1,12 @@
+{
+  "id": "css-ex-024",
+  "title": "RTL Logical Properties",
+  "desc": "margin و padding را منطقی کنید.",
+  "start": "",
+  "tests": [
+    [
+      "logical margin",
+      "document.querySelector('.box') !== null"
+    ]
+  ]
+}

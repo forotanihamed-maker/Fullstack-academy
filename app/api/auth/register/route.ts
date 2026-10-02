@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { z } from "zod";
-import { prisma } from "../../../../lib/prisma";
-
 const schema = z.object({
   name: z.string().trim().min(2).max(80),
   email: z.email().trim().toLowerCase(),
@@ -14,6 +12,7 @@ export async function POST(request: Request) {
     const parsed = schema.safeParse(await request.json());
     if (!parsed.success) return NextResponse.json({ message: "اطلاعات واردشده معتبر نیست؛ رمز عبور باید حداقل ۸ کاراکتر باشد." }, { status: 400 });
     const { name, email, password } = parsed.data;
+    const { prisma } = await import("../../../../lib/prisma");
     const existing = await prisma.user.findUnique({ where: { email } });
     if (existing) return NextResponse.json({ message: "این ایمیل قبلاً ثبت‌نام کرده است." }, { status: 409 });
     const passwordHash = await bcrypt.hash(password, 12);

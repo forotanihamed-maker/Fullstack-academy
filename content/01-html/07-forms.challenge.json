@@ -1,0 +1,29 @@
+{
+  "id": "html-ch-005",
+  "title": "Challenge: فرم ثبت‌نام بدون JavaScript",
+  "brief": "یک فرم ثبت‌نام کامل با validation بومی HTML بساز.",
+  "requirements": [
+    "label برای همه فیلدها",
+    "name برای داده‌ها",
+    "fieldset/legend برای گروه‌ها",
+    "email/password/tel/select/radio/checkbox/textarea",
+    "required/minlength/min/max/pattern",
+    "autocomplete"
+  ],
+  "hints": [
+    "id برای label و name برای submission را جداگانه بررسی کن.",
+    "radioهای یک گروه name مشترک دارند."
+  ],
+  "acceptanceCriteria": [
+    "فرم با داده نامعتبر submit نشود",
+    "تمام کنترل‌ها keyboard accessible باشند",
+    "placeholder جای label نباشد",
+    "در DevTools بتوانی نقش هر attribute را توضیح دهی"
+  ],
+  "skills": [
+    "forms",
+    "validation",
+    "accessibility",
+    "submission"
+  ]
+}

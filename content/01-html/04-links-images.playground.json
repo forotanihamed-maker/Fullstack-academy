@@ -1,13 +1,12 @@
 {
-  "title": "تمرین عملی: لینک و تصویر",
-  "desc": "سه لینک بسازید (یکی به سایت دیگر در تب جدید با <code>rel</code> امن، یکی ایمیل، یکی لنگر به پایین همین صفحه) و یک تصویر با <code>alt</code> مناسب بگذارید. برای تصویر می‌توانید از آدرس <code>https://via.placeholder.com/150</code> استفاده کنید.",
-  "html": "",
-  "css": "",
+  "title": "Try It: Link و Image",
+  "desc": "alt تصویر و مسیر لینک را تغییر دهید.",
+  "html": "<a href=\"#contact\">تماس</a>\n<img src=\"https://via.placeholder.com/180\" alt=\"تصویر نمونه\">\n<div id=\"contact\">اطلاعات تماس</div>",
+  "css": "img { max-width: 180px; display: block; margin-top: 12px; }",
   "js": "",
   "checks": [
-    ["لینکی با target=_blank و rel شامل noopener دارد", "!!document.querySelector('a[target=_blank][rel*=noopener]')"],
-    ["لینک mailto دارد", "!!document.querySelector('a[href^=\"mailto:\"]')"],
-    ["لینک لنگر (#) دارد", "!!document.querySelector('a[href^=\"#\"]')"],
-    ["تصویری با alt غیرخالی دارد", "!!document.querySelector('img[alt]') && document.querySelector('img').alt.trim().length > 0"]
+    ["لینک anchor وجود دارد", "document.querySelector('a[href=\"#contact\"]') !== null"],
+    ["تصویر alt دارد", "document.querySelector('img[alt]') !== null"],
+    ["contact وجود دارد", "document.querySelector('#contact') !== null"]
   ]
 }

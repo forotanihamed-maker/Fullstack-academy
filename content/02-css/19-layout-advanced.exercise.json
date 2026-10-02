@@ -1,0 +1,12 @@
+{
+  "id": "css-ex-019",
+  "title": "Grid خودکار",
+  "desc": "یک gallery با auto-fit و minmax بسازید.",
+  "start": "",
+  "tests": [
+    [
+      "grid exists",
+      "getComputedStyle(document.querySelector('.gallery')).display === 'grid'"
+    ]
+  ]
+}

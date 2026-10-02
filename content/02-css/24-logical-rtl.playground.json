@@ -1,0 +1,8 @@
+{
+  "title": "RTL Lab",
+  "desc": "با logical properties یک box بسازید.",
+  "html": "<div class='box'>محتوا</div>",
+  "css": ".box{margin-inline-start:1rem;padding-inline:1rem;text-align:start;border:1px solid #ddd}",
+  "js": "",
+  "checks": []
+}

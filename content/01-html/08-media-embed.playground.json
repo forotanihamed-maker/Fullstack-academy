@@ -1,0 +1,21 @@
+{
+  "title": "Try It: تصویر واکنش‌گرا",
+  "desc": "srcset و width/height را بررسی کنید.",
+  "html": "<img src=\"https://placehold.co/800x450\" srcset=\"https://placehold.co/400x225 400w, https://placehold.co/800x450 800w\" sizes=\"100vw\" width=\"800\" height=\"450\" alt=\"تصویر نمونه\">",
+  "css": "img{max-width:100%;height:auto}",
+  "js": "",
+  "checks": [
+    [
+      "alt وجود دارد",
+      "document.querySelector('img').alt.length > 0"
+    ],
+    [
+      "width مشخص است",
+      "document.querySelector('img').hasAttribute('width')"
+    ],
+    [
+      "srcset وجود دارد",
+      "document.querySelector('img').hasAttribute('srcset')"
+    ]
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "id": "journey-ecommerce",
+  "slug": "journey-ecommerce",
+  "title": "Journey Project: فروشگاه Full-Stack",
+  "type": "journey",
+  "description": "یک فروشگاه را مرحله‌به‌مرحله از HTML ساده تا یک محصول Full-Stack قابل استقرار توسعه دهید.",
+  "difficulty": "advanced",
+  "prerequisites": [
+    "01-html",
+    "02-css",
+    "03-javascript",
+    "05-typescript"
+  ],
+  "technologies": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "Prisma",
+    "Docker",
+    "CI/CD"
+  ],
+  "skills": [
+    "UI development",
+    "state management",
+    "REST API",
+    "relational database",
+    "authentication",
+    "testing",
+    "deployment"
+  ],
+  "requirements": [
+    "صفحه اصلی فروشگاه",
+    "فهرست محصولات",
+    "جزئیات محصول",
+    "سبد خرید",
+    "ثبت سفارش",
+    "حساب کاربری",
+    "مدیریت سفارش‌ها"
+  ],
+  "milestones": [
+    {
+      "id": "m1-html",
+      "title": "نسخه HTML",
+      "description": "ساخت اسکلت semantic فروشگاه بدون CSS و JavaScript.",
+      "requiredLessons": [
+        "01-html/01-intro",
+        "01-html/02-elements"
+      ],
+      "requiredSkills": [
+        "semantic HTML",
+        "links",
+        "forms"
+      ],
+      "tasks": [
+        "Home",
+        "Products",
+        "Product detail",
+        "Cart",
+        "Checkout form"
+      ],
+      "checkpoint": "تمام صفحات اصلی وجود داشته باشند و navigation کار کند."
+    },
+    {
+      "id": "m2-css",
+      "title": "نسخه Responsive",
+      "description": "ظاهر و responsive layout فروشگاه را اضافه کنید.",
+      "requiredLessons": [
+        "02-css/14-variables",
+        "02-css/15-fluid-values",
+        "02-css/16-cascade",
+        "02-css/17-advanced-selectors",
+        "02-css/18-stacking",
+        "02-css/19-layout-advanced",
+        "02-css/20-container-query",
+        "02-css/21-architecture",
+        "02-css/22-accessibility-performance",
+        "02-css/23-modern-css",
+        "02-css/24-logical-rtl",
+        "02-css/25-real-ui"
+      ],
+      "requiredSkills": [
+        "selectors",
+        "colors",
+        "units",
+        "box model",
+        "background",
+        "typography",
+        "display",
+        "position",
+        "flexbox",
+        "grid",
+        "responsive",
+        "animation",
+        "custom properties",
+        "clamp",
+        "specificity",
+        "advanced selectors",
+        "stacking context",
+        "container query",
+        "BEM",
+        "accessibility",
+        "logical properties"
+      ],
+      "tasks": [
+        "Header و Hero",
+        "Product cards با Grid",
+        "Navigation با Flexbox",
+        "sticky header و badge",
+        "Typography و background system",
+        "Responsive mobile-first",
+        "Transition و animation کنترل‌شده",
+        "design tokens",
+        "cascade debugging",
+        "responsive component patterns",
+        "RTL-friendly spacing",
+        "accessibility states",
+        "Flex debugging با min-width: 0",
+        "Grid auto-fit/minmax و aspect-ratio",
+        "Stacking context و z-index tokens",
+        "Cascade debugging در DevTools",
+        "Keyboard/focus/contrast audit"
+      ],
+      "checkpoint": "نسخه Responsive فروشگاه در 320، 768 و 1440 بدون overflow ناخواسته و با focus/reduced-motion/RTL قابل استفاده باشد."
+    },
+    {
+      "id": "m3-javascript",
+      "title": "تعامل با JavaScript",
+      "description": "سبد خرید، جستجو، فیلتر و validation را اضافه کنید.",
+      "requiredLessons": [
+        "03-javascript"
+      ],
+      "requiredSkills": [
+        "state",
+        "events",
+        "arrays",
+        "objects"
+      ],
+      "tasks": [
+        "Cart state",
+        "Search",
+        "Filter",
+        "Sort",
+        "Checkout validation"
+      ],
+      "checkpoint": "افزودن و حذف محصول از سبد بدون refresh انجام شود."
+    },
+    {
+      "id": "m4-typescript",
+      "title": "TypeScript",
+      "description": "مدل‌های داده و منطق اصلی را type-safe کنید.",
+      "requiredLessons": [
+        "05-typescript"
+      ],
+      "requiredSkills": [
+        "interfaces",
+        "unions",
+        "generics",
+        "narrowing"
+      ],
+      "tasks": [
+        "Product type",
+        "Cart types",
+        "Order types",
+        "Typed utilities"
+      ],
+      "checkpoint": "کد اصلی پروژه بدون any غیرضروری typecheck شود."
+    },
+    {
+      "id": "m5-react",
+      "title": "React",
+      "description": "فروشگاه را به رابط component-based تبدیل کنید.",
+      "requiredLessons": [
+        "09-react"
+      ],
+      "requiredSkills": [
+        "components",
+        "state",
+        "forms",
+        "routing"
+      ],
+      "tasks": [
+        "Product components",
+        "Cart state",
+        "Routing",
+        "Loading/error states"
+      ],
+      "checkpoint": "UI به componentهای قابل نگهداری تقسیم شده باشد."
+    }
+  ],
+  "deliverables": [
+    "Source code",
+    "README",
+    "screenshots",
+    "architecture notes"
+  ],
+  "acceptanceCriteria": [
+    "تمام milestoneهای تکمیل‌شده قابل اجرا باشند.",
+    "کد TypeScript typecheck شود.",
+    "فرم‌ها validation داشته باشند.",
+    "حالت loading/error/empty برای بخش‌های async وجود داشته باشد."
+  ],
+  "extensionIdeas": [
+    "coupon system",
+    "admin dashboard",
+    "inventory",
+    "payment integration"
+  ]
+}

@@ -1,5 +1,14 @@
 ---
 title: عنوان‌ها، پاراگراف‌ها و لیست‌ها
+description: ساختاردهی متن، headingها و انواع list را با HTML معنایی تمرین می‌کنید.
+difficulty: beginner
+estimatedMinutes: 20
+objectives: ["ساخت heading hierarchy", "استفاده درست از paragraph و emphasis", "ساخت لیست‌های مرتب و نامرتب"]
+concepts: ["h1-h6", "p", "br", "hr", "strong", "em", "ul", "ol", "li", "dl"]
+prerequisites: ["01-html/02-elements"]
+relatedLessons: ["01-html/02-elements", "01-html/04-links-images"]
+relatedProjects: ["html-foundations-site"]
+nextLesson: 04-links-images
 ---
 
 ## عنوان‌ها (Headings)

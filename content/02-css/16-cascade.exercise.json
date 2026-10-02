@@ -1,0 +1,12 @@
+{
+  "id": "css-ex-016",
+  "title": "تحلیل Specificity",
+  "desc": "قوانین داده‌شده را از نظر Specificity مقایسه کنید.",
+  "start": "",
+  "tests": [
+    [
+      "class rule exists",
+      "document.querySelector('.note') !== null"
+    ]
+  ]
+}

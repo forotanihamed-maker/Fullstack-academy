@@ -1,0 +1,13 @@
+{
+  "title": "Try It: Background: رنگ، تصویر و گرادیان",
+  "desc": "کد CSS را تغییر دهید و نتیجه را در پیش‌نمایش بررسی کنید.",
+  "html": "<main class=\"demo\"><section class=\"hero\"><h2>نمونه</h2><p>متن نمونه برای تمرین CSS.</p></section><div class=\"cards\"><article class=\"card\">کارت ۱</article><article class=\"card\">کارت ۲</article><article class=\"card\">کارت ۳</article></div></main>",
+  "css": ".hero{min-height:180px;padding:2rem;color:#fff;background:linear-gradient(135deg,#2563eb,#7c3aed);background-size:cover;background-position:center}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.card{padding:1rem;background:#fff}",
+  "js": "",
+  "checks": [
+    [
+      "حداقل یک عنصر نمایشی وجود دارد",
+      "document.querySelector(\".demo\") !== null"
+    ]
+  ]
+}

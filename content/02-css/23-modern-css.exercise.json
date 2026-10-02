@@ -1,0 +1,12 @@
+{
+  "id": "css-ex-023",
+  "title": "Modern CSS",
+  "desc": "از aspect-ratio و gap استفاده کنید.",
+  "start": "",
+  "tests": [
+    [
+      "ratio",
+      "getComputedStyle(document.querySelector('.thumb')).aspectRatio !== 'auto'"
+    ]
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "id": "css-advanced-dashboard",
+  "slug": "css-advanced-dashboard",
+  "title": "Advanced CSS Project: داشبورد مدیریتی",
+  "type": "skill",
+  "description": "یک داشبورد مدیریتی واکنشگرا با Design Tokens، تم روشن/تیره، Grid Areas، Flexbox، BEM و دسترس‌پذیری بسازید؛ بدون JavaScript.",
+  "difficulty": "advanced",
+  "prerequisites": [
+    "02-css/14-variables",
+    "02-css/15-fluid-values",
+    "02-css/16-cascade",
+    "02-css/17-advanced-selectors",
+    "02-css/18-stacking",
+    "02-css/19-layout-advanced",
+    "02-css/20-container-query",
+    "02-css/21-architecture",
+    "02-css/22-accessibility-performance",
+    "02-css/23-modern-css",
+    "02-css/24-logical-rtl",
+    "02-css/25-real-ui"
+  ],
+  "technologies": [
+    "HTML",
+    "CSS"
+  ],
+  "skills": [
+    "custom properties",
+    "clamp",
+    "media query",
+    "container query",
+    "grid areas",
+    "flexbox",
+    "BEM",
+    "logical properties",
+    "accessibility",
+    "performance"
+  ],
+  "requirements": [
+    "Sidebar ناوبری",
+    "Top bar با جستجو و avatar",
+    "چهار کارت آماری",
+    "جدول داده",
+    "نمودار ساده با CSS",
+    "لیست فعالیت‌های اخیر",
+    "Badgeهای وضعیت",
+    "Alert",
+    "تم روشن و تیره با prefers-color-scheme",
+    "responsive layout در 320/768/1440",
+    "focus-visible و reduced-motion",
+    "دیباگ overflow در Flex با min-width: 0 در صورت نیاز",
+    "مدیریت z-index با stacking context و tokenهای لایه، نه اعداد تصادفی",
+    "استفاده از auto-fit/minmax برای شبکه کارت‌ها",
+    "بررسی keyboard، zoom و reduced-motion در QA",
+    "آزمون RTL و LTR برای componentهای اصلی"
+  ],
+  "milestones": [
+    {
+      "id": "m1-tokens",
+      "title": "Design Tokens و پایه",
+      "description": "Tokenها، Reset، تایپوگرافی و stateهای پایه را بسازید.",
+      "requiredLessons": [
+        "02-css/14-variables",
+        "02-css/15-fluid-values",
+        "02-css/21-architecture"
+      ],
+      "requiredSkills": [
+        "tokens",
+        "reset",
+        "BEM"
+      ],
+      "tasks": [
+        "color tokens",
+        "spacing tokens",
+        "typography tokens",
+        "BEM naming",
+        "small reset"
+      ],
+      "checkpoint": "با تغییر یک Token، بخش‌های مرتبط UI تغییر کنند."
+    },
+    {
+      "id": "m2-layout",
+      "title": "Layout و Component",
+      "description": "Grid Areas، Flexbox و Cardها را پیاده کنید.",
+      "requiredLessons": [
+        "02-css/19-layout-advanced",
+        "02-css/20-container-query",
+        "02-css/25-real-ui"
+      ],
+      "requiredSkills": [
+        "grid",
+        "flexbox",
+        "container-query"
+      ],
+      "tasks": [
+        "sidebar",
+        "topbar",
+        "stats grid",
+        "activity list",
+        "data table",
+        "CSS chart"
+      ],
+      "checkpoint": "چیدمان در عرض‌های هدف بدون overflow باشد."
+    },
+    {
+      "id": "m3-quality",
+      "title": "دسترس‌پذیری و کیفیت",
+      "description": "Focus، contrast، motion و RTL را کامل کنید.",
+      "requiredLessons": [
+        "02-css/22-accessibility-performance",
+        "02-css/23-modern-css",
+        "02-css/24-logical-rtl"
+      ],
+      "requiredSkills": [
+        "accessibility",
+        "performance",
+        "RTL"
+      ],
+      "tasks": [
+        "dark theme",
+        "focus-visible",
+        "reduced-motion",
+        "logical properties",
+        "responsive test"
+      ],
+      "checkpoint": "UI در 320، 768 و 1440 قابل استفاده و بدون اسکرول افقی باشد."
+    }
+  ],
+  "deliverables": [
+    "index.html",
+    "styles.css",
+    "README.md",
+    "responsive-test-notes.md"
+  ],
+  "acceptanceCriteria": [
+    "بدون framework و JavaScript",
+    "رنگ و فاصله hard-coded خارج از Tokens نباشد",
+    "Selectorها حداکثر دو سطح باشند",
+    "هر دو theme کنتراست حداقل 4.5:1 داشته باشند",
+    "همه interactive elementها focus-visible داشته باشند",
+    "prefers-reduced-motion رعایت شود",
+    "هیچ ID برای styling استفاده نشود",
+    "در 320px، 768px و 1440px horizontal overflow ناخواسته وجود نداشته باشد.",
+    "z-indexهای پروژه از یک scale مشخص پیروی کنند.",
+    "overflow ناشی از محتوای طولانی با راه‌حل ریشه‌ای اصلاح شود، نه صرفاً overflow-x:hidden.",
+    "RTL و LTR برای layout، spacing و positioning تست شوند."
+  ],
+  "extensionIdeas": [
+    "تبدیل dashboard به React",
+    "افزودن API داده‌ها در فصل HTTP/API",
+    "افزودن theme switcher با JavaScript در فصل Browser"
+  ]
+}

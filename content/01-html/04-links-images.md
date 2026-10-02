@@ -1,5 +1,14 @@
 ---
 title: لینک‌ها و تصویرها
+description: لینک‌های داخلی و خارجی، anchorها، تصویرها و alt را به کار می‌برید.
+difficulty: beginner
+estimatedMinutes: 22
+objectives: ["ساخت لینک‌های مختلف", "استفاده صحیح از alt", "ساخت تصویر و figure"]
+concepts: ["a", "href", "target", "rel", "img", "alt", "figure", "figcaption", "relative path"]
+prerequisites: ["01-html/03-text"]
+relatedLessons: ["01-html/03-text", "01-html/05-semantic"]
+relatedProjects: ["html-foundations-site"]
+nextLesson: 05-semantic
 ---
 
 ## لینک‌ها

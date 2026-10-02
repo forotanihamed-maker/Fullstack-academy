@@ -1,0 +1,29 @@
+{
+  "id": "css-ch-003",
+  "title": "Challenge: Dashboard با CSS Grid",
+  "brief": "یک page shell و card grid بساز که از Grid Areas و auto-fit استفاده کند.",
+  "requirements": [
+    "Header، Sidebar، Main و Footer با grid-template-areas ساخته شوند.",
+    "در mobile layout تک‌ستونه شود.",
+    "کارت‌ها با repeat و minmax واکنش‌گرا باشند.",
+    "تصاویر کارت aspect-ratio و object-fit داشته باشند."
+  ],
+  "hints": [
+    "ابتدا named areas را طراحی کن.",
+    "حداقل عرض کارت را بر اساس محتوای واقعی انتخاب کن.",
+    "auto-fit را در چند viewport آزمایش کن."
+  ],
+  "acceptanceCriteria": [
+    "در 320، 768 و 1440 پیکسل overflow ناخواسته نباشد.",
+    "Grid و Flex هر کدام در جای مناسب استفاده شوند.",
+    "تصاویر کشیده یا فشرده‌ی غیرطبیعی نباشند."
+  ],
+  "skills": [
+    "grid",
+    "grid-areas",
+    "minmax",
+    "auto-fit",
+    "aspect-ratio",
+    "object-fit"
+  ]
+}

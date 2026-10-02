@@ -1,0 +1,19 @@
+{
+  "title": "تمرین: اولین صفحه",
+  "desc": "یک سند HTML بسازید که یک <code>h1</code> و یک <code>p</code> داشته باشد. عنوان صفحه باید <code>My First Page</code> باشد.",
+  "start": "<!DOCTYPE html>\n<html lang=\"fa\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Page</title>\n</head>\n<body>\n  <h1>سلام</h1>\n  <p>من در حال یادگیری HTML هستم.</p>\n</body>\n</html>",
+  "tests": [
+    [
+      "عنوان تب صحیح است",
+      "document.title === \"My First Page\""
+    ],
+    [
+      "h1 وجود دارد",
+      "document.querySelector(\"h1\") !== null"
+    ],
+    [
+      "p وجود دارد",
+      "document.querySelector(\"p\") !== null"
+    ]
+  ]
+}

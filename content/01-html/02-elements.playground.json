@@ -1,0 +1,11 @@
+{
+  "title": "Try It: Element و Attribute",
+  "desc": "یک class، یک id و یک لینک اضافه کنید.",
+  "html": "<p class=\"intro\">یک متن کوتاه</p>\n<a id=\"docs\" href=\"#\">راهنما</a>",
+  "css": ".intro { font-weight: 700; }",
+  "js": "",
+  "checks": [
+    ["class intro وجود دارد", "document.querySelector('.intro') !== null"],
+    ["لینک دارای href است", "document.querySelector('a[href]') !== null"]
+  ]
+}

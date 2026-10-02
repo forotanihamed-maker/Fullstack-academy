@@ -1,0 +1,29 @@
+{
+  "id": "css-ch-004",
+  "title": "Challenge: Responsive Audit",
+  "brief": "یک صفحه‌ی موجود را در سه viewport و دو حالت preference بررسی و اصلاح کن.",
+  "requirements": [
+    "mobile-first باشد.",
+    "حداقل سه breakpoint بر اساس شکست واقعی layout انتخاب شود.",
+    "overflow افقی ریشه‌یابی و اصلاح شود.",
+    "reduced-motion و dark preference در صورت نیاز پشتیبانی شود."
+  ],
+  "hints": [
+    "به جای overflow-x:hidden علت را پیدا کن.",
+    "320، 768 و 1440 را مقایسه کن.",
+    "متن و تصویر را نیز در کنار layout بررسی کن."
+  ],
+  "acceptanceCriteria": [
+    "در 320px horizontal scroll ناخواسته وجود نداشته باشد.",
+    "در 768px layout خوانا باشد.",
+    "در 1440px محتوا بیش از حد کشیده نشود.",
+    "با reduced-motion animation مزاحم اجرا نشود."
+  ],
+  "skills": [
+    "responsive",
+    "mobile-first",
+    "media-query",
+    "overflow",
+    "accessibility"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "title": "Media Tile",
+  "desc": "یک tile با نسبت 16/9 بسازید.",
+  "html": "<div class='thumb'>تصویر</div>",
+  "css": ".thumb{aspect-ratio:16/9;background:#e2e8f0;display:grid;place-items:center}",
+  "js": "",
+  "checks": []
+}

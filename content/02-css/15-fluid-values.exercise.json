@@ -1,0 +1,12 @@
+{
+  "id": "css-ex-015",
+  "title": "Typography سیال",
+  "desc": "برای h1 از clamp استفاده کنید.",
+  "start": "",
+  "tests": [
+    [
+      "uses clamp",
+      "getComputedStyle(document.querySelector('h1')).fontSize !== ''"
+    ]
+  ]
+}

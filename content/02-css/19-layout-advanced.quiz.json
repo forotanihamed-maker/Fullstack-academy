@@ -1,0 +1,35 @@
+[
+  {
+    "q": "برای جلوگیری از بیرون‌زدن متن از Flex item چه property مهمی است؟",
+    "o": [
+      "max-width:100%",
+      "min-width:0",
+      "display:block",
+      "overflow:visible"
+    ],
+    "a": 1,
+    "e": "min-width:0 اجازه کوچک‌شدن محتوای Flex item را می‌دهد."
+  },
+  {
+    "q": "min-width:0 در flex item چه مشکلی را اغلب حل می‌کند؟",
+    "o": [
+      "جلوگیری از overflow ناشی از محتوای طولانی",
+      "فعال کردن z-index",
+      "ساخت animation",
+      "تغییر رنگ"
+    ],
+    "a": 0,
+    "e": "این property اجازه می‌دهد item از min-content size کوچک‌تر شود."
+  },
+  {
+    "q": "auto-fit و auto-fill در چه چیزی تفاوت دارند؟",
+    "o": [
+      "رفتار trackهای خالی",
+      "وجود Flexbox",
+      "رنگ Grid",
+      "Specificity"
+    ],
+    "a": 0,
+    "e": "تفاوت مهم آن‌ها در مدیریت trackهای خالی و فضای باقی‌مانده است."
+  }
+]

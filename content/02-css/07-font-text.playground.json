@@ -1,0 +1,13 @@
+{
+  "title": "Try It: فونت و متن در CSS",
+  "desc": "کد CSS را تغییر دهید و نتیجه را در پیش‌نمایش بررسی کنید.",
+  "html": "<main class=\"demo\"><section class=\"hero\"><h2>نمونه</h2><p>متن نمونه برای تمرین CSS.</p></section><div class=\"cards\"><article class=\"card\">کارت ۱</article><article class=\"card\">کارت ۲</article><article class=\"card\">کارت ۳</article></div></main>",
+  "css": "body{font-family:system-ui,sans-serif;line-height:1.7}.hero{max-width:65ch}.hero h2{font-size:2rem}.card{font-size:1rem;font-weight:600}",
+  "js": "",
+  "checks": [
+    [
+      "حداقل یک عنصر نمایشی وجود دارد",
+      "document.querySelector(\".demo\") !== null"
+    ]
+  ]
+}

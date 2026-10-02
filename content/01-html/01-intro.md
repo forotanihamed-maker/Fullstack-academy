@@ -1,5 +1,14 @@
 ---
 title: HTML چیست و از کجا شروع کنیم؟
+description: با نقش HTML، ساختار یک سند و اولین صفحه‌ی وب آشنا شوید.
+difficulty: beginner
+estimatedMinutes: 15
+objectives: ["توضیح نقش HTML در وب", "ساخت یک سند HTML5 پایه", "شناخت head و body"]
+concepts: ["HTML", "DOCTYPE", "html", "head", "body", "meta charset", "viewport", "title"]
+prerequisites: []
+relatedLessons: ["01-html/02-elements"]
+relatedProjects: ["html-foundations-site"]
+nextLesson: 02-elements
 ---
 
 **HTML** مخفف HyperText Markup Language است و «زبان نشانه‌گذاری» نام دارد، نه زبان برنامه‌نویسی. یعنی محاسبه و تصمیم‌گیری ندارد؛ فقط به مرورگر می‌گوید هر تکه از محتوا **چیست**: عنوان، پاراگراف، لینک، تصویر، جدول و...

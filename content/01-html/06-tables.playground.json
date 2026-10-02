@@ -1,0 +1,21 @@
+{
+  "title": "Try It: جدول نمرات",
+  "desc": "ساختار جدول را اصلاح کنید و scope را اضافه کنید.",
+  "html": "<table>\n  <caption>نمرات</caption>\n  <thead><tr><th>نام</th><th>HTML</th><th>CSS</th></tr></thead>\n  <tbody><tr><td>سارا</td><td>18</td><td>20</td></tr></tbody>\n</table>",
+  "css": "table{border-collapse:collapse;width:100%}th,td{border:1px solid #999;padding:8px}",
+  "js": "",
+  "checks": [
+    [
+      "caption وجود دارد",
+      "document.querySelector('caption') !== null"
+    ],
+    [
+      "thead وجود دارد",
+      "document.querySelector('thead') !== null"
+    ],
+    [
+      "حداقل یک th دارد",
+      "document.querySelectorAll('th').length >= 2"
+    ]
+  ]
+}

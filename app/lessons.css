@@ -8,3 +8,5 @@ blockquote{border-right:4px solid var(--accent);margin:14px 0;padding:4px 16px;b
 blockquote p{margin:6px 0}
 article h2{margin-top:1.6em}
 article img{max-width:100%}
+
+.challenge{border-right:4px solid var(--accent);padding-right:16px}.challenge h3{margin-top:1.2em}.challenge li{margin:6px 0}

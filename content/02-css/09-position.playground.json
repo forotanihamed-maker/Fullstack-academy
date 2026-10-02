@@ -1,0 +1,13 @@
+{
+  "title": "Try It: Position، Overflow و z-index",
+  "desc": "کد CSS را تغییر دهید و نتیجه را در پیش‌نمایش بررسی کنید.",
+  "html": "<main class=\"demo\"><section class=\"hero\"><h2>نمونه</h2><p>متن نمونه برای تمرین CSS.</p></section><div class=\"cards\"><article class=\"card\">کارت ۱</article><article class=\"card\">کارت ۲</article><article class=\"card\">کارت ۳</article></div></main>",
+  "css": ".demo{position:relative}.hero{position:relative;padding:2rem}.hero h2{position:relative}.card{position:relative;padding:1rem}.card:first-child::after{content:\"جدید\";position:absolute;inset-block-start:.5rem;inset-inline-end:.5rem}",
+  "js": "",
+  "checks": [
+    [
+      "حداقل یک عنصر نمایشی وجود دارد",
+      "document.querySelector(\".demo\") !== null"
+    ]
+  ]
+}

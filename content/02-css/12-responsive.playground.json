@@ -1,0 +1,13 @@
+{
+  "title": "Try It: Responsive و Media Query",
+  "desc": "کد CSS را تغییر دهید و نتیجه را در پیش‌نمایش بررسی کنید.",
+  "html": "<main class=\"demo\"><section class=\"hero\"><h2>نمونه</h2><p>متن نمونه برای تمرین CSS.</p></section><div class=\"cards\"><article class=\"card\">کارت ۱</article><article class=\"card\">کارت ۲</article><article class=\"card\">کارت ۳</article></div></main>",
+  "css": ".cards{display:grid;grid-template-columns:1fr;gap:1rem}@media (min-width:768px){.cards{grid-template-columns:repeat(2,1fr)}}@media (min-width:1100px){.cards{grid-template-columns:repeat(3,1fr)}}.card{padding:1rem}",
+  "js": "",
+  "checks": [
+    [
+      "حداقل یک عنصر نمایشی وجود دارد",
+      "document.querySelector(\".demo\") !== null"
+    ]
+  ]
+}

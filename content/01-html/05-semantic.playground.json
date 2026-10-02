@@ -1,0 +1,12 @@
+{
+  "title": "Try It: Semantic Layout",
+  "desc": "divها را با عناصر معنایی مناسب جایگزین کنید.",
+  "html": "<header>عنوان سایت</header>\n<nav><a href=\"#\">خانه</a></nav>\n<main><article><h1>یک مقاله</h1><p>متن مقاله</p></article><aside>مطالب مرتبط</aside></main>\n<footer>پایان</footer>",
+  "css": "main { display: grid; grid-template-columns: 1fr 220px; gap: 16px; }",
+  "js": "",
+  "checks": [
+    ["یک main وجود دارد", "document.querySelectorAll('main').length === 1"],
+    ["article وجود دارد", "document.querySelector('article') !== null"],
+    ["nav وجود دارد", "document.querySelector('nav') !== null"]
+  ]
+}

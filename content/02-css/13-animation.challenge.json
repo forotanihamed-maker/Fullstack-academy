@@ -1,0 +1,36 @@
+{
+  "id": "css-ch-002",
+  "title": "Challenge: Landing Page واکنشگرا",
+  "brief": "یک Landing Page واقعی را از HTML موجود با CSS متوسط استایل‌دهی کنید.",
+  "requirements": [
+    "Header sticky با navigation",
+    "Hero تمام‌عرض با Flexbox",
+    "شبکه featureها با Grid",
+    "سه حالت mobile/tablet/desktop",
+    "تصاویر responsive با object-fit",
+    "hover و focus برای عناصر تعاملی",
+    "transition و animation ورود با transform/opacity"
+  ],
+  "hints": [
+    "Mobile-first شروع کنید.",
+    "برای layout صفحه از Grid و برای اجزای یک‌بعدی از Flexbox استفاده کنید.",
+    "Breakpoint را جایی بگذارید که layout می‌شکند."
+  ],
+  "acceptanceCriteria": [
+    "در عرض 320، 768 و 1440 اسکرول افقی وجود نداشته باشد",
+    "Flexbox و Grid هر دو با دلیل مناسب استفاده شده باشند",
+    "تصاویر کشیده یا بیرون‌زده نباشند",
+    "عناصر تعاملی hover و visible focus داشته باشند",
+    "animation فقط transform و opacity را تغییر دهد"
+  ],
+  "skills": [
+    "background",
+    "typography",
+    "display",
+    "position",
+    "flexbox",
+    "grid",
+    "responsive",
+    "animation"
+  ]
+}

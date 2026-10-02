@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
       <body className={font.className}>
-        <header><Link href="/">آکادمی فول‌استک TypeScript</Link><Link href="/register" style={{float:"left"}}>ثبت‌نام</Link></header>
+        <header><Link href="/">آکادمی فول‌استک</Link><span className="header-links"><Link href="/projects">پروژه‌ها</Link><Link href="/register">ثبت‌نام</Link></span></header>
         <div className="shell">
           <Sidebar sections={sections} />
           <main>{children}</main>

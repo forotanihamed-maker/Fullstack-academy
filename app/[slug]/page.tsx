@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import LessonView from "../../components/LessonView";
 import { getLesson, getSectionLessons, getSections } from "../../lib/content";
+import { getProjects } from "../../lib/projects";
 import "../lessons.css";
 
 export function generateStaticParams() {
@@ -22,6 +23,7 @@ export default async function SectionPage({ params }) {
         <ol className="lessons">
           {lessons.map((l) => (<li key={l.id}><Link href={"/" + slug + "/" + l.id}>{l.title}</Link></li>))}
         </ol>
+        {getProjects().filter((p) => p.prerequisites.some((x) => x.startsWith(slug + "/"))).length > 0 && <p><Link href="/projects">→ پروژه‌های مرتبط با این مسیر</Link></p>}
       </div>
     );
   }

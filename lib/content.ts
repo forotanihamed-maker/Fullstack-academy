@@ -2,44 +2,104 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 
-const dir = path.join(process.cwd(), "content");
-const readJson = (p) => (fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, "utf8")) : null);
+export type Difficulty = "beginner" | "intermediate" | "advanced";
 
-// درس‌های یک بخش: فایل‌هایی مثل 01-intro.md ، 02-elements.md ...
-function lessonIds(slug) {
-  const base = path.join(dir, slug);
+export type LessonSummary = {
+  id: string;
+  title: string;
+  description?: string;
+  difficulty?: Difficulty;
+  estimatedMinutes?: number;
+};
+
+export type Lesson = LessonSummary & {
+  moduleId: string;
+  content: string;
+  objectives: string[];
+  concepts: string[];
+  prerequisites: string[];
+  relatedLessons: string[];
+  relatedProjects: string[];
+  nextLesson?: string;
+  quiz: unknown[] | null;
+  exercise: Record<string, unknown> | null;
+  playground: Record<string, unknown> | null;
+  challenges: Record<string, unknown>[];
+};
+
+const contentDir = path.join(process.cwd(), "content");
+
+function readJson<T>(filePath: string): T | null {
+  if (!fs.existsSync(filePath)) return null;
+  return JSON.parse(fs.readFileSync(filePath, "utf8")) as T;
+}
+
+function lessonIds(slug: string): string[] {
+  const base = path.join(contentDir, slug);
   if (!fs.existsSync(base)) return [];
-  return fs.readdirSync(base).filter((f) => /^\d\d-.+\.md$/.test(f)).sort().map((f) => f.replace(/\.md$/, ""));
+
+  return fs.readdirSync(base, { withFileTypes: true })
+    .filter((entry) => entry.isFile() && /^\d\d-.+\.md$/.test(entry.name))
+    .sort((a, b) => a.name.localeCompare(b.name, "en"))
+    .map((entry) => entry.name.replace(/\.md$/, ""));
 }
 
 export function getSections() {
-  const all = readJson(path.join(dir, "sections.json")) || [];
-  return all.map((s) => ({
-    ...s,
-    ready: lessonIds(s.slug).length > 0 || fs.existsSync(path.join(dir, s.slug, "note.md")),
-  }));
-}
-
-export function getSectionLessons(slug) {
-  return lessonIds(slug).map((id) => {
-    const { data } = matter(fs.readFileSync(path.join(dir, slug, id + ".md"), "utf8"));
-    return { id, title: data.title || id };
+  const all = readJson<Array<Record<string, unknown>>>(path.join(contentDir, "sections.json")) || [];
+  return all.map((section) => {
+    const slug = String(section.slug);
+    return {
+      ...section,
+      slug,
+      title: String(section.title ?? slug),
+      ready: lessonIds(slug).length > 0 || fs.existsSync(path.join(contentDir, slug, "note.md")),
+    };
   });
 }
 
-// id خالی = بخش‌های قدیمی که یک note.md دارند
-export function getLesson(slug, id) {
-  const base = path.join(dir, slug);
-  const file = id ? id + ".md" : "note.md";
-  const prefix = id ? id + "." : "";
-  const notePath = path.join(base, file);
-  if (!fs.existsSync(notePath)) return null;
-  const { data, content } = matter(fs.readFileSync(notePath, "utf8"));
+export function getSectionLessons(slug: string): LessonSummary[] {
+  return lessonIds(slug).flatMap((id) => {
+    const filePath = path.join(contentDir, slug, `${id}.md`);
+    if (!fs.existsSync(filePath)) return [];
+
+    const { data, content } = matter(fs.readFileSync(filePath, "utf8"));
+    return [{
+      id,
+      title: String(data.title || id),
+      description: typeof data.description === "string" ? data.description : content.trim().split("\n").find(Boolean)?.slice(0, 160),
+      difficulty: data.difficulty as Difficulty | undefined,
+      estimatedMinutes: typeof data.estimatedMinutes === "number" ? data.estimatedMinutes : undefined,
+    }];
+  });
+}
+
+export function getLesson(slug: string, id?: string): Lesson | null {
+  const base = path.join(contentDir, slug);
+  const fileName = id ? `${id}.md` : "note.md";
+  const prefix = id ? `${id}.` : "";
+  const filePath = path.join(base, fileName);
+  if (!fs.existsSync(filePath)) return null;
+
+  const { data, content } = matter(fs.readFileSync(filePath, "utf8"));
+  const summary = getSectionLessons(slug).find((item) => item.id === id);
+
   return {
-    title: data.title || slug,
+    id: id || slug,
+    moduleId: slug,
+    title: String(data.title || summary?.title || slug),
+    description: typeof data.description === "string" ? data.description : summary?.description,
+    difficulty: (data.difficulty as Difficulty | undefined) || summary?.difficulty,
+    estimatedMinutes: typeof data.estimatedMinutes === "number" ? data.estimatedMinutes : summary?.estimatedMinutes,
     content,
-    quiz: readJson(path.join(base, prefix + "quiz.json")),
-    exercise: readJson(path.join(base, prefix + "exercise.json")),
-    playground: readJson(path.join(base, prefix + "playground.json")),
+    objectives: Array.isArray(data.objectives) ? data.objectives.map(String) : [],
+    concepts: Array.isArray(data.concepts) ? data.concepts.map(String) : [],
+    prerequisites: Array.isArray(data.prerequisites) ? data.prerequisites.map(String) : [],
+    relatedLessons: Array.isArray(data.relatedLessons) ? data.relatedLessons.map(String) : [],
+    relatedProjects: Array.isArray(data.relatedProjects) ? data.relatedProjects.map(String) : [],
+    nextLesson: typeof data.nextLesson === "string" ? data.nextLesson : undefined,
+    quiz: readJson<unknown[]>(path.join(base, `${prefix}quiz.json`)) ?? readJson<unknown[]>(path.join(base, "quiz.json")),
+    exercise: readJson<Record<string, unknown>>(path.join(base, `${prefix}exercise.json`)) ?? readJson<Record<string, unknown>>(path.join(base, "exercise.json")),
+    playground: readJson<Record<string, unknown>>(path.join(base, `${prefix}playground.json`)) ?? readJson<Record<string, unknown>>(path.join(base, "playground.json")),
+    challenges: [readJson<Record<string, unknown>>(path.join(base, `${prefix}challenge.json`))].filter((x): x is Record<string, unknown> => Boolean(x)),
   };
 }

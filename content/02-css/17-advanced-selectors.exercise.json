@@ -1,0 +1,12 @@
+{
+  "id": "css-ex-017",
+  "title": "Selectorهای دقیق",
+  "desc": "focus-visible و :not را در یک دکمه به‌کار ببرید.",
+  "start": "",
+  "tests": [
+    [
+      "button exists",
+      "document.querySelector('button') !== null"
+    ]
+  ]
+}

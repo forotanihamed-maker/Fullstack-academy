@@ -1,0 +1,28 @@
+{
+  "id": "css-ch-005",
+  "title": "Challenge: پرونده‌ی Cascade را حل کن",
+  "brief": "چند rule متعارض را بدون استفاده‌ی بی‌دلیل از !important اصلاح کن و دلیل نهایی را مستند کن.",
+  "requirements": [
+    "Specificity هر rule محاسبه شود.",
+    "یک conflict با DevTools بررسی شود.",
+    "در صورت مناسب بودن از @layer یا :where استفاده شود.",
+    "ID برای styling اضافه نشود."
+  ],
+  "hints": [
+    "اول selectorهای match شده را ببین.",
+    "بعد Specificity و order را مقایسه کن.",
+    "!important را آخرین گزینه‌ی محدود نگه دار."
+  ],
+  "acceptanceCriteria": [
+    "راه‌حل با selectorهای کم‌عمق و قابل نگهداری باشد.",
+    "دلیل برنده شدن rule نهایی قابل توضیح باشد.",
+    "هیچ specificity جنگی جدیدی ساخته نشود."
+  ],
+  "skills": [
+    "cascade",
+    "specificity",
+    "inheritance",
+    "layers",
+    "devtools"
+  ]
+}

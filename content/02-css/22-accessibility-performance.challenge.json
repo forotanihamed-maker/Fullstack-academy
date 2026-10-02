@@ -1,0 +1,30 @@
+{
+  "id": "css-ch-006",
+  "title": "Challenge: Accessibility CSS Audit",
+  "brief": "یک component library کوچک را از نظر focus، contrast، reduced-motion و touch target اصلاح کن.",
+  "requirements": [
+    "focus-visible واضح باشد.",
+    "کنتراست متن معمولی بررسی شود.",
+    "stateهای success/error فقط به رنگ وابسته نباشند.",
+    "prefers-reduced-motion پشتیبانی شود.",
+    "کنترل‌های اصلی touch target مناسبی داشته باشند."
+  ],
+  "hints": [
+    "با keyboard همه‌ی controls را پیمایش کن.",
+    "contrast را اندازه بگیر، حدس نزن.",
+    "motion را با preference سیستم آزمایش کن."
+  ],
+  "acceptanceCriteria": [
+    "focus برای keyboard قابل مشاهده باشد.",
+    "متن معمولی به معیار 4.5:1 برسد.",
+    "در reduced-motion حرکت غیرضروری حذف یا کاهش یابد.",
+    "در 320px کنترل‌ها قابل استفاده باشند."
+  ],
+  "skills": [
+    "accessibility",
+    "focus-visible",
+    "contrast",
+    "reduced-motion",
+    "performance"
+  ]
+}

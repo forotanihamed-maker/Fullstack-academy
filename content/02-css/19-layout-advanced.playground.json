@@ -1,0 +1,13 @@
+{
+  "title": "Auto Grid",
+  "desc": "شبکه کارت خودکار بسازید.",
+  "html": "<div class='gallery'><article>A</article><article>B</article><article>C</article></div>",
+  "css": ".gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.gallery article{padding:2rem;border:1px solid #ddd}",
+  "js": "",
+  "checks": [
+    [
+      "grid",
+      "getComputedStyle(document.querySelector('.gallery')).display === 'grid'"
+    ]
+  ]
+}

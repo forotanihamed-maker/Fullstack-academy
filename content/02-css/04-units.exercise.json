@@ -1,0 +1,19 @@
+{
+  "title": "تمرین: واحد مناسب",
+  "desc": "فونت و فاصله‌ها را با rem تنظیم کنید و عرض متن را با ch محدود کنید.",
+  "start": "<article class=\"article\"><h2>متن نمونه</h2><p>این یک متن نسبتاً طولانی برای بررسی خوانایی است.</p></article>",
+  "tests": [
+    [
+      "article وجود دارد",
+      "document.querySelector('.article') !== null"
+    ],
+    [
+      "پاراگراف max-width دارد",
+      "getComputedStyle(document.querySelector('p')).maxWidth !== 'none'"
+    ],
+    [
+      "padding وجود دارد",
+      "parseFloat(getComputedStyle(document.querySelector('.article')).paddingTop) > 0"
+    ]
+  ]
+}

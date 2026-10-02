@@ -1,0 +1,11 @@
+{
+  "title": "تمرین: Transition، Transform و Animation",
+  "desc": "کد شروع را کامل کنید تا رفتار خواسته‌شده در تست‌ها برقرار شود.",
+  "start": "const style = document.createElement(\"style\");\nstyle.textContent = `/* CSS خودت را اینجا بنویس */`;\ndocument.head.appendChild(style);\nreturn document.querySelector(\".demo\") !== null;",
+  "tests": [
+    [
+      "وجود صفحه تمرین",
+      "document.querySelector(\".demo\") !== null"
+    ]
+  ]
+}

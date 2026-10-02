@@ -1,0 +1,29 @@
+{
+  "id": "css-ch-002",
+  "title": "Challenge: دیباگ Toolbar و کارت‌های Flex",
+  "brief": "یک toolbar و ردیف کارت را طوری اصلاح کن که در عرض کم overflow نکنند و ترتیب منطقی محتوا حفظ شود.",
+  "requirements": [
+    "Toolbar با Flex ساخته شود.",
+    "گروه actionها با margin-inline-start:auto به انتهای محور برود.",
+    "برای محتوای طولانی item مناسب min-width:0 داشته باشد.",
+    "کارت‌ها با flex و gap چیده شوند.",
+    "از order برای تغییر ترتیب معنایی استفاده نشود."
+  ],
+  "hints": [
+    "اول محور main/cross را مشخص کن.",
+    "Computed style مربوط به min-width و flex-basis را بررسی کن.",
+    "در viewport کوچک overflow افقی را ریشه‌یابی کن."
+  ],
+  "acceptanceCriteria": [
+    "در عرض 320px overflow ناخواسته وجود نداشته باشد.",
+    "عنوان طولانی layout را نشکند.",
+    "focus و ترتیب DOM منطقی باقی بماند."
+  ],
+  "skills": [
+    "flexbox",
+    "min-width",
+    "gap",
+    "logical-properties",
+    "debugging"
+  ]
+}

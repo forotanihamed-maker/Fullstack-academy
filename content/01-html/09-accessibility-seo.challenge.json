@@ -1,0 +1,31 @@
+{
+  "id": "html-ch-006",
+  "title": "Challenge: HTML Accessibility Audit",
+  "brief": "یک صفحه موجود را فقط با تغییر HTML بهبود بده.",
+  "requirements": [
+    "heading hierarchy",
+    "semantic landmarks",
+    "keyboard-friendly native controls",
+    "skip link",
+    "alt مناسب",
+    "form labels",
+    "ARIA فقط در صورت نیاز",
+    "title و lang"
+  ],
+  "hints": [
+    "اول native HTML را اصلاح کن، بعد ARIA را بررسی کن.",
+    "صفحه را فقط با Tab پیمایش کن."
+  ],
+  "acceptanceCriteria": [
+    "عملیات اصلی بدون mouse قابل انجام باشد",
+    "لینک‌ها متن معنادار داشته باشند",
+    "هیچ focus قابل دسترسی حذف نشده باشد",
+    "ساختار semantic واضح باشد"
+  ],
+  "skills": [
+    "accessibility",
+    "ARIA",
+    "SEO",
+    "keyboard navigation"
+  ]
+}

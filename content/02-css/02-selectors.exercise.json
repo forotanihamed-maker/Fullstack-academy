@@ -1,0 +1,19 @@
+{
+  "title": "تمرین: Selectorها",
+  "desc": "با selectorهای class و pseudo-class یک لیست را استایل دهید.",
+  "start": "<ul class=\"items\"><li>A</li><li>B</li><li>C</li><li>D</li></ul>",
+  "tests": [
+    [
+      "چهار li وجود دارد",
+      "document.querySelectorAll('.items li').length === 4"
+    ],
+    [
+      "کلاس روی ul وجود دارد",
+      "document.querySelector('.items') !== null"
+    ],
+    [
+      "ردیف‌های زوج متفاوت شده‌اند",
+      "getComputedStyle(document.querySelector('.items li:nth-child(2)')).backgroundColor !== 'rgba(0, 0, 0, 0)'"
+    ]
+  ]
+}

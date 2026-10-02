@@ -1,0 +1,35 @@
+[
+  {
+    "q": "در BEM، card__title چیست؟",
+    "o": [
+      "Modifier",
+      "Element",
+      "Utility",
+      "Layer"
+    ],
+    "a": 1,
+    "e": "دو underscore برای Element استفاده شد."
+  },
+  {
+    "q": "در BEM card__title چیست؟",
+    "o": [
+      "Block",
+      "Element",
+      "Modifier",
+      "Utility"
+    ],
+    "a": 1,
+    "e": "دو underscore معمولاً Element را نشان می‌دهد."
+  },
+  {
+    "q": "چرا selectorهای عمیق مشکل‌سازند؟",
+    "o": [
+      "وابستگی به ساختار و افزایش specificity",
+      "کاهش HTML",
+      "فعال کردن Grid",
+      "حذف inheritance"
+    ],
+    "a": 0,
+    "e": "با تغییر ساختار DOM یا component، selector عمیق راحت‌تر می‌شکند."
+  }
+]

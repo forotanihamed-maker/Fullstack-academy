@@ -1,0 +1,10 @@
+{
+  "title": "تمرین: تابع delay",
+  "desc": "تابعی به نام <code>delay(ms, value)</code> بنویسید که یک Promise برگرداند و بعد از <code>ms</code> میلی‌ثانیه با مقدار <code>value</code> موفق شود. (راهنما: <code>new Promise</code> و <code>setTimeout</code>)",
+  "start": "function delay(ms, value) {\n  // کد خود را اینجا بنویسید\n}\n",
+  "tests": [
+    ["delay یک Promise برمی‌گرداند", "delay(1,'a') instanceof Promise"],
+    ["بعد از تأخیر مقدار را برمی‌گرداند", "delay(20,'سلام').then(v=>v==='سلام')"],
+    ["با مقدار عددی هم کار می‌کند", "delay(10,42).then(v=>v===42)"]
+  ]
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "q": "برای مصرف Custom Property از کدام تابع استفاده می‌شود؟",
+    "o": [
+      "token()",
+      "var()",
+      "use()",
+      "value()"
+    ],
+    "a": 1,
+    "e": "مقدار با var(--name) مصرف می‌شود."
+  },
+  {
+    "q": "کدام selector برای theme در نمونه درس استفاده شد؟",
+    "o": [
+      ":theme",
+      "[data-theme=\"dark\"]",
+      ".theme-dark-only",
+      "@theme"
+    ],
+    "a": 1,
+    "e": "Attribute selector برای theme روی data-theme قرار گرفت."
+  },
+  {
+    "q": "فرق semantic token با primitive token چیست؟",
+    "o": [
+      "semantic نقش UI را بیان می‌کند، primitive مقدار پایه را",
+      "هیچ فرقی ندارند",
+      "primitive فقط برای JS است",
+      "semantic فقط برای فونت است"
+    ],
+    "a": 0,
+    "e": "مثلاً --color-action می‌تواند به --blue-600 اشاره کند."
+  },
+  {
+    "q": "fallback در var() چه زمانی استفاده می‌شود؟",
+    "o": [
+      "وقتی custom property قابل استفاده نباشد",
+      "همیشه",
+      "فقط در JavaScript",
+      "فقط در Grid"
+    ],
+    "a": 0,
+    "e": "var(--x, fallback) در صورت نامعتبر/غایب بودن x می‌تواند fallback را به کار ببرد."
+  },
+  {
+    "q": "مزیت theme مبتنی بر token چیست؟",
+    "o": [
+      "تغییر چند مقدار مرکزی به جای ده‌ها selector",
+      "افزایش specificity",
+      "حذف CSS",
+      "اجباری شدن inline style"
+    ],
+    "a": 0,
+    "e": "componentها از semantic token استفاده می‌کنند و theme مقدار token را تغییر می‌دهد."
+  }
+]
