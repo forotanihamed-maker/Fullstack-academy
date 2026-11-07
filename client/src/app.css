@@ -1,0 +1,21 @@
+/* ===== هدر و منوی مراحل ===== */
+.top nav{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.menu{position:relative}
+.menu > button{padding:.2rem 1rem}
+.menu__list{position:absolute;inset-inline-start:0;top:calc(100% + .5rem);z-index:20;list-style:none;margin:0;padding:.5rem;min-width:260px;max-height:70vh;overflow:auto;background:#fff;border:2px solid var(--ink);border-radius:8px;box-shadow:4px 4px 0 var(--mark)}
+.menu__list a{display:block;padding:.2rem .7rem;border-radius:6px}
+.menu__list a:hover,.menu__list a:focus-visible{background:var(--paper);outline:2px solid var(--accent)}
+
+/* ===== صفحه‌ی اصلی: پیشرفت ===== */
+.overall{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:1.5rem 0}
+.overall p{margin:0 0 .4rem;font-weight:600}
+.overall progress{width:100%;height:1rem;accent-color:var(--accent)}
+.path .meta{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:flex-end;align-items:center}
+.path .chip{font-size:.75rem;padding:0 .6rem;border-radius:99px;background:var(--paper);border:1px solid var(--line)}
+
+/* ===== صفحه‌ی مرحله ===== */
+main.stage{max-width:1240px}
+.lesson-pager{display:flex;justify-content:space-between;gap:1rem;margin:1rem 0 2rem}
+.lesson-pager button:disabled{opacity:.45;cursor:not-allowed}
+.stage-next{margin:2.5rem 0 1rem;padding:1rem;background:#fff;border:1px solid var(--line);border-radius:10px;font-weight:600}
+.stage-next a{color:var(--accent);text-decoration:underline}

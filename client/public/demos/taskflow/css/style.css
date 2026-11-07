@@ -1,0 +1,666 @@
+/* ============================================
+   TaskFlow — style.css
+   ============================================ */
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* ---------- پس‌زمینه ---------- */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-muted: #f1f5f9;
+
+  /* ---------- متن ---------- */
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --text-muted: #64748b; /* #94a3b8 روی سفید کنتراست ۲.۵۶ داشت */
+
+  /* ---------- رنگ اصلی ---------- */
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-primary-soft: #eff6ff;
+
+  /* ---------- دکمه‌ها ---------- */
+  --btn-bg: #2563eb;
+  --btn-bg-hover: #1d4ed8;
+  --btn-text: #ffffff;
+
+  --btn-secondary-bg: #eff6ff;
+  --btn-secondary-text: #2563eb;
+  --btn-secondary-border: #bfdbfe;
+
+  /* ---------- بردر ---------- */
+  --border-color: #e2e8f0;
+
+  /* ---------- سایه ---------- */
+  --color-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --color-shadow-md: 0 4px 12px rgba(15, 23, 42, 0.1);
+
+  /* ---------- وضعیت‌ها ---------- */
+  --color-success: #16a34a;
+  --color-success-soft: #f0fdf4;
+
+  --color-warning: #b45309;
+  --color-warning-soft: #fffbeb;
+
+  --color-error: #dc2626;
+  --color-error-soft: #fef2f2;
+
+  /* ---------- فوکوس ---------- */
+  --focus-ring: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* ============================================
+   ریست سبک
+   ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header__nav {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 1.6rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__brand {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: -0.5px;
+}
+
+.header__btn {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.6rem;
+  background: var(--color-primary);
+  color: var(--btn-text);
+  transition: background-color 0.2s ease;
+}
+
+.header__btn:hover {
+  background: var(--color-primary-dark);
+}
+
+.header__btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* ============================================
+   MAIN
+   ============================================ */
+.main {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 3.2rem 4rem;
+}
+
+/* ============================================
+   STATS
+   ============================================ */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.6rem;
+  margin-bottom: 3.2rem;
+}
+
+.stat {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.8rem;
+  padding: 1.6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.stat__label {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+}
+
+.stat__value {
+  font-size: 2.4rem;
+  color: var(--text-primary);
+}
+
+/* ============================================
+   TASKS
+   ============================================ */
+.tasks {
+  padding: 2rem 0;
+}
+
+.section-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin: 0 0 4rem;
+}
+
+/* ===== Toolbar ===== */
+.tasks__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* ===== Search ===== */
+.search {
+  flex: 1 1 30rem;
+  font-size: 1.6rem;
+  padding: 1.2rem 1.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.6rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search::placeholder {
+  color: var(--text-muted);
+}
+
+.search:focus {
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring);
+}
+
+/* ===== Filters ===== */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.filter {
+  font-size: 1.4rem;
+  padding: 1.1rem 1.4rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.6rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filter:hover {
+  border-color: var(--color-primary);
+}
+
+.filter:focus-visible {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring);
+}
+
+/* ===== Grid ===== */
+.tasks__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+  gap: 2rem;
+}
+
+/* ===== Empty State ===== */
+.no-results {
+  text-align: center;
+  font-size: 1.6rem;
+  color: var(--text-secondary);
+  padding: 4rem 0;
+}
+/* ===== Task Card ===== */
+.task-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 1.2rem;
+  padding: 2rem;
+
+  box-shadow: var(--color-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+}
+
+/* ---- Header: عنوان + بج وضعیت ---- */
+.task-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.task-card__title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* ---- Description ---- */
+.task-card__desc {
+  font-size: 1.4rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---- Meta: دسته‌بندی + تاریخ ---- */
+.task-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  margin-top: auto;
+}
+
+/* ---- Actions ---- */
+.task-card__actions {
+  display: flex;
+  gap: 0.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.task-card__btn {
+  flex: 1;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.6rem;
+  transition: background-color 0.2s ease;
+}
+
+.task-card__btn--edit {
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border: 1px solid var(--btn-secondary-border);
+}
+.task-card__btn--edit:hover {
+  background: var(--btn-secondary-border);
+}
+
+.task-card__btn--delete {
+  background: var(--color-error-soft);
+  color: var(--color-error);
+  border: 1px solid var(--color-error-soft);
+}
+.task-card__btn--delete:hover {
+  background: var(--color-error);
+  color: var(--btn-text);
+}
+
+/* ===== Badge (وضعیت) ===== */
+.badge {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.badge:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+.badge--pending {
+  background: var(--bg-muted);
+  color: #475569;
+}
+
+.badge--progress {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.badge--completed {
+  background: var(--color-success-soft);
+  color: #15803d; /* خوانایی بهتر از #16a34a روی زمینه‌ی روشن */
+}
+/* ===== Overlay ===== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  background-color: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  /* حالت پیش‌فرض: مخفی */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== Modal Box ===== */
+.task-form-modal {
+  width: 100%;
+  max-width: 48rem;
+  max-height: 85vh;
+  overflow-y: auto;
+
+  background-color: var(--bg-primary);
+  border-radius: 1.2rem;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.35);
+
+  display: flex;
+  flex-direction: column;
+
+  /* انیمیشن ورود */
+  transform: translateY(20px) scale(0.98);
+  transition: transform 0.3s ease;
+}
+
+.overlay.active .task-form-modal {
+  transform: translateY(0) scale(1);
+}
+
+/* ===== Modal Header ===== */
+.new-task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2.4rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.new-task-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.sabad-close {
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--text-secondary);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sabad-close:hover,
+.sabad-close:focus-visible {
+  background-color: var(--bg-secondary);
+  color: var(--color-error);
+  outline: none;
+}
+
+/* ===== Form ===== */
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 2.4rem;
+}
+
+.task-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.task-form input,
+.task-form textarea,
+.task-form select {
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.6rem;
+  background-color: var(--bg-primary);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-form textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.task-form input:focus,
+.task-form textarea:focus,
+.task-form select:focus {
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring);
+}
+
+.task-form input::placeholder,
+.task-form textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* ===== Submit Button ===== */
+.task-form button[type="submit"] {
+  margin-top: 0.8rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1.2rem;
+  border-radius: 0.6rem;
+  background-color: var(--color-primary);
+  color: var(--btn-text);
+  transition: background-color 0.2s ease;
+}
+
+.task-form button[type="submit"]:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.task-form button[type="submit"]:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  text-align: center;
+  padding: 3.2rem 2rem;
+  margin-top: 4rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 1.4rem;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+  .header__nav {
+    padding: 1.2rem 2rem;
+  }
+
+  .main {
+    padding: 2.4rem 2rem;
+  }
+
+  .section-title {
+    font-size: 2.4rem;
+    margin-bottom: 3rem;
+  }
+
+  .tasks__toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filters {
+    justify-content: stretch;
+  }
+
+  .filter {
+    flex: 1 1 auto;
+  }
+
+  .tasks__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .stat__label {
+    font-size: 1.1rem;
+  }
+
+  .stat__value {
+    font-size: 2rem;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+}
+
+/* ===== اصلاحات بازبینی ===== */
+.header__title {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.badge:disabled {
+  cursor: default;
+  transform: none;
+  opacity: 1;
+}
+
+.task-card__meta {
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.task-card__priority {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.2rem 0.8rem;
+  border-radius: 999px;
+}
+
+.task-card__priority--low {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.task-card__priority--medium {
+  background: #fffbeb;
+  color: #92400e;
+}
+
+.task-card__priority--high {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.task-card__due--overdue {
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+.no-results p {
+  margin: 0 0 1.2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* مودال هنگام «باز شدن» فوراً visible شود (تا focus() کار کند) و فقط هنگام «بسته شدن» با تأخیر مخفی شود */
+.overlay.active {
+  transition: opacity 0.3s ease, visibility 0s;
+}
+
+/* فونت: بدون font-family مرورگر از فونت Serif (Times) استفاده می‌کند؛ اندازه‌ی پایه هم چون html روی 62.5% است باید صریح بنویسی */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1.6rem;
+}

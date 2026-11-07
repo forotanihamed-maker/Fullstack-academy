@@ -1,0 +1,869 @@
+/* ===== Reset سبک ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* پس‌زمینه */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f9ff;
+
+  /* آبی اصلی */
+  --color-primary: #1e5eff;
+  --color-primary-dark: #1440b0;
+
+  /* دکمه‌ها */
+  --btn-bg: #1e5eff; /* متن سفید روی #4d8bff کنتراست ۳.۲۵ داشت */
+  --btn-bg-hover: #1440b0;
+  --btn-text: #ffffff;
+
+  /* دکمه ثانویه */
+  --btn-secondary-bg: #eaf1ff;
+  --btn-secondary-text: #1e5eff;
+  --btn-secondary-border: #b8d0ff;
+
+  /* متن */
+  --text-primary: #1a1a2e;
+  --text-secondary: #5c6b8a;
+
+  /* بردر */
+  --border-color: #dde7ff;
+
+  /* سایه */
+  --color-shadow: rgba(30, 94, 255, 0.08);
+  --color-shadow-md: rgba(30, 94, 255, 0.18);
+
+  /* فیدبک */
+  --color-success: #2ecc71;
+  --color-error: #c0392b; /* #e74c3c روی سفید ۳.۸۲ بود */
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background-color: var(--bg-primary);
+  padding: 1.5rem 4rem;
+  box-shadow: 0 2px 10px var(--color-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.brandName {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: -0.5px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.nav-link {
+  font-size: 1.6rem;
+  color: var(--text-secondary);
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--color-primary);
+  background-color: var(--bg-secondary);
+}
+
+.cart-btn {
+  font-weight: 600;
+}
+
+/* ===== HERO ===== */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  padding: 6rem 4rem;
+  min-height: 80vh;
+  max-width: 120rem;
+  margin: 0 auto;
+  background-color: var(--bg-primary);
+}
+
+.hero-text {
+  flex: 1 1 50%;
+  max-width: 55rem;
+}
+
+.hero-title {
+  font-size: 5.6rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 1.5rem;
+  line-height: 1.15;
+}
+
+.hero-title span {
+  color: var(--color-primary);
+}
+
+.hero-subtitle {
+  font-size: 1.8rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0 0 3rem;
+  max-width: 45rem;
+}
+
+.hero-btn {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--btn-text);
+  background-color: var(--btn-bg);
+  padding: 1.2rem 3.2rem;
+  border-radius: 0.6rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero-btn:hover,
+.hero-btn:focus-visible {
+  background-color: var(--btn-bg-hover);
+  transform: translateY(-2px);
+}
+
+.hero-img-wrap {
+  flex: 1 1 40%;
+  max-width: 50rem;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  border-radius: 1.2rem;
+  box-shadow: 0 20px 40px var(--color-shadow-md);
+  object-fit: cover;
+}
+
+/* ===== ریسپانسیو ===== */
+@media only screen and (max-width: 992px) {
+  .hero-title {
+    font-size: 4.2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
+
+  .header-navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .brandName {
+    font-size: 2.4rem;
+  }
+
+  .nav-right {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  .nav-link {
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Hero */
+  .hero {
+    flex-direction: column-reverse;
+    padding: 4rem 2rem;
+    min-height: auto;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 3.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.6rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-img-wrap {
+    max-width: 100%;
+  }
+}
+/* ===== PRODUCTS ===== */
+.products {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 6rem 4rem;
+}
+
+.section-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin: 0 0 4rem;
+}
+
+/* ===== Toolbar (Search + Filter) ===== */
+.products-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+#search-input {
+  flex: 1 1 30rem;
+  font-size: 1.6rem;
+  padding: 1.2rem 1.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.6rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#search-input:focus {
+  border-color: var(--color-primary);
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.filter-btn {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 0.9rem 2rem;
+  border-radius: 0.6rem;
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border: 1px solid var(--btn-secondary-border);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn:focus-visible {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+/* دکمه فیلتر فعال — با JS کلاس اضافه میشه */
+.filter-btn.active {
+  background-color: var(--color-primary);
+  color: var(--btn-text);
+  border-color: var(--color-primary);
+}
+
+/* ===== Grid ===== */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+  gap: 3rem;
+}
+
+/* ===== Card ===== */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 4px 16px var(--color-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px var(--color-shadow-md);
+}
+
+.product-img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.product-info h3 {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.product-category {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0.4rem 0;
+}
+
+.product-desc {
+  font-size: 1.4rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0 0 1rem;
+}
+
+.product-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.btn-details {
+  flex: 1;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 1rem;
+  border-radius: 0.6rem;
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border: 1px solid var(--btn-secondary-border);
+  transition: background-color 0.3s ease;
+}
+
+.btn-details:hover,
+.btn-details:focus-visible {
+  background-color: var(--btn-secondary-border);
+}
+
+.btn-add {
+  flex: 1;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 1rem;
+  border-radius: 0.6rem;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  transition: background-color 0.3s ease;
+}
+
+.btn-add:hover,
+.btn-add:focus-visible {
+  background-color: var(--btn-bg-hover);
+}
+#filter {
+  font-size: 1.4rem; /* به‌جای scale: 1.3 */
+  padding: 0.8rem 1.2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.6rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+/* ===== Overlay (پس‌زمینه تار) ===== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000; /* ⬆ بالاتر از Header (1000) */
+
+  /* چیدمان: وسط‌چین کردن sabad */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  /* ظاهر */
+  background-color: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  /* حالت پیش‌فرض: مخفی */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* وقتی باز شد */
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== باکس سفید (Cart Panel) ===== */
+.sabad {
+  width: 100%;
+  max-width: 48rem;
+  max-height: 80vh;
+  overflow-y: auto;
+
+  background-color: var(--bg-primary);
+  border-radius: 1.2rem;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.35);
+
+  display: flex;
+  flex-direction: column;
+
+  /* انیمیشن ورود */
+  transform: translateY(20px) scale(0.98);
+  transition: transform 0.3s ease;
+}
+
+.overlay.active .sabad {
+  transform: translateY(0) scale(1);
+}
+
+/* ===== هدر باکس ===== */
+.sabad-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2.4rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sabad-header h2 {
+  font-size: 2rem;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.sabad-close {
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--text-secondary);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sabad-close:hover,
+.sabad-close:focus-visible {
+  background-color: var(--bg-secondary);
+  color: var(--color-error);
+}
+
+/* ===== لیست آیتم‌ها ===== */
+.sabad-items {
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem 2.4rem;
+  gap: 1.2rem;
+  flex: 1;
+}
+
+.sabad-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sabad-item:last-child {
+  border-bottom: none;
+}
+
+.sabad-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.sabad-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.remove {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-error);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  transition: background-color 0.2s ease;
+}
+
+.remove:hover,
+.remove:focus-visible {
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+/* ===== فوتر باکس ===== */
+.sabad-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem 2.4rem 2rem;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  border-radius: 0 0 1.2rem 1.2rem;
+}
+
+.sabad-total {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.btn-clear {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 0.9rem 1.8rem;
+  border-radius: 0.6rem;
+  background-color: var(--btn-secondary-bg);
+  color: var(--color-error);
+  border: 1px solid var(--color-error);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-clear:hover,
+.btn-clear:focus-visible {
+  background-color: var(--color-error);
+  color: var(--btn-text);
+}
+
+/* ===== Product Details Modal ===== */
+.details-modal {
+  width: 100%;
+  max-width: 70rem;
+  max-height: 85vh;
+  overflow-y: auto;
+
+  background-color: var(--bg-primary);
+  border-radius: 1.2rem;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.35);
+
+  display: flex;
+  flex-direction: column;
+
+  /* انیمیشن ورود */
+  transform: translateY(20px) scale(0.98);
+  transition: transform 0.3s ease;
+}
+
+.overlay.active .details-modal {
+  transform: translateY(0) scale(1);
+}
+
+/* ===== هدر ===== */
+.details-modal header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.6rem 2rem 0;
+}
+
+#details-close {
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--text-secondary);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#details-close:hover,
+#details-close:focus-visible {
+  background-color: var(--bg-secondary);
+  color: var(--color-error);
+}
+
+/* ===== تصویر ===== */
+#details-img {
+  width: 100%;
+  height: 28rem;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  margin: 0 2.4rem 2rem;
+  width: calc(100% - 4.8rem); /* چون margin داره */
+}
+
+/* ===== متن‌ها ===== */
+#details-name {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 2.4rem 1rem;
+}
+
+#details-category {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 2.4rem 1rem;
+}
+
+#details-desc {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0 2.4rem 1.6rem;
+}
+
+#details-price {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0 2.4rem 2rem;
+}
+
+/* ===== دکمه Add to Cart ===== */
+#details-add {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--btn-text);
+  background-color: var(--btn-bg);
+  padding: 1.2rem;
+  border-radius: 0.6rem;
+  margin: 0 2.4rem 2.4rem;
+  transition: background-color 0.3s ease;
+}
+
+#details-add:hover,
+#details-add:focus-visible {
+  background-color: var(--btn-bg-hover);
+}
+
+/* ===== موبایل ===== */
+@media only screen and (max-width: 480px) {
+  #details-img {
+    height: 20rem;
+    margin: 0 1.6rem 1.6rem;
+    width: calc(100% - 3.2rem);
+  }
+
+  #details-name,
+  #details-category,
+  #details-desc,
+  #details-price,
+  #details-add {
+    margin-left: 1.6rem;
+    margin-right: 1.6rem;
+  }
+
+  #details-name {
+    font-size: 2rem;
+  }
+
+  #details-price {
+    font-size: 1.8rem;
+  }
+}
+/* ===== موبایل ===== */
+@media only screen and (max-width: 480px) {
+  .sabad {
+    max-height: 90vh;
+  }
+
+  .sabad-header,
+  .sabad-items,
+  .sabad-footer {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+
+  .sabad-item {
+    flex-wrap: wrap;
+  }
+}
+/* ===== No Results ===== */
+.no-results {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--text-secondary);
+  padding: 4rem 0;
+}
+
+/* ===== ریسپانسیو ===== */
+@media only screen and (max-width: 768px) {
+  .products {
+    padding: 4rem 2rem;
+  }
+
+  .section-title {
+    font-size: 2.4rem;
+    margin-bottom: 3rem;
+  }
+
+  .products-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-buttons {
+    justify-content: center;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== اصلاحات بازبینی ===== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.cart-empty {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.qty-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.qty-btn {
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--color-primary);
+  background-color: var(--btn-secondary-bg);
+  border: 1px solid var(--btn-secondary-border);
+  border-radius: 0.6rem;
+}
+
+.qty-btn:hover,
+.qty-btn:focus-visible {
+  background-color: var(--btn-secondary-border);
+}
+
+.qty-value {
+  min-width: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.btn-clear:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.footer {
+  padding: 3rem 2rem;
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--text-secondary);
+}
+
+.footer p {
+  margin: 0 0 0.5rem;
+}
+
+.footer a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* مودال هنگام «باز شدن» فوراً visible شود (تا focus() کار کند) و فقط هنگام «بسته شدن» با تأخیر مخفی شود */
+.overlay.active {
+  transition: opacity 0.3s ease, visibility 0s;
+}
+
+/* فونت: بدون font-family مرورگر از فونت Serif (Times) استفاده می‌کند؛ اندازه‌ی پایه هم چون html روی 62.5% است باید صریح بنویسی */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1.6rem;
+}

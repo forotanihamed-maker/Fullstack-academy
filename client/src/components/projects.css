@@ -1,0 +1,14 @@
+.project-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1rem 0 1.5rem}
+.project-card{display:flex;flex-direction:column;align-items:flex-start;gap:.5rem;text-align:start;padding:1rem;border:2px solid var(--line);border-radius:10px;background:#fff;color:inherit;line-height:1.7}
+.project-card strong{font-size:1.1rem}
+.project-card small{color:#4b5f59}
+.project-card[aria-pressed="true"]{border-color:var(--ink);box-shadow:4px 4px 0 var(--mark)}
+.project-meta{display:flex;flex-wrap:wrap;gap:.4rem}
+.chip{font-size:.75rem;padding:0 .6rem;border-radius:99px;background:var(--paper);border:1px solid var(--line)}
+.chip-status{background:var(--mark);border-color:var(--mark)}
+.tabs a{padding:.4rem 0;border-bottom:3px solid transparent}
+.tabs a:hover,.tabs a:focus-visible{border-bottom-color:var(--mark);outline:none}
+.tabs a.project{color:var(--accent);font-weight:600}
+
+.project-demo{display:inline-block;padding:.4rem 1.2rem;border:2px solid var(--ink);border-radius:6px;background:var(--mark);font-weight:600}
+.project-demo:hover,.project-demo:focus-visible{background:var(--ink);color:#fff}

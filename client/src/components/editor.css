@@ -1,0 +1,5 @@
+.exercise h3{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+.badge-ok{font-size:.8rem;font-weight:600;color:#fff;background:var(--accent);padding:0 .6rem;border-radius:99px}
+.solution{margin-top:.8rem}
+.solution pre{direction:ltr;text-align:left;background:var(--ink);color:#e8f1ee;padding:1rem;border-radius:8px;overflow-x:auto;line-height:1.6;margin:0}
+.actions{flex-wrap:wrap}

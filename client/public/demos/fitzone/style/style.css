@@ -1,0 +1,868 @@
+/* style.css */
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+}
+:root {
+  /* ===== رنگ‌های اصلی برند ===== */
+  --color-primary: #0b4f2c; /* سبز تیره - رنگ اصلی برند */
+  --color-primary-dark: #0a3a22; /* سبز خیلی تیره - برای فوتر و پس‌زمینه‌های تیره */
+  --color-primary-light: #2e7d32; /* سبز متوسط - رنگ ثانویه */
+
+  /* ===== رنگ‌های اکشن و دکمه‌ها ===== */
+  --color-accent: #4caf50; /* سبز روشن - برای دکمه‌ها و هایلایت */
+  --color-accent-hover: #388e3c; /* سبز پررنگ‌تر - برای هوور دکمه‌ها */
+
+  /* ===== رنگ‌های متن ===== */
+  --color-text-primary: #1a1a1a; /* تقریباً مشکی - برای تیترها و متن اصلی */
+  --color-text-secondary: #4a4a4a; /* خاکستری متوسط - برای توضیحات و متن‌های فرعی */
+  --color-text-light: #ffffff; /* سفید - برای متن روی پس‌زمینه‌های تیره */
+  --color-text-muted: #888888; /* خاکستری روشن - برای متن‌های کم‌اهمیت‌تر */
+
+  /* ===== رنگ‌های پس‌زمینه ===== */
+  --color-bg-primary: #ffffff; /* سفید - پس‌زمینه اصلی */
+  --color-bg-secondary: #f8f9fa; /* سفید-خاکستری بسیار کم - برای بخش‌های متناوب */
+  --color-bg-dark: #0a3a22; /* سبز خیلی تیره - برای فوتر و بخش‌های تیره */
+  --color-bg-accent: #4caf50; /* سبز روشن - برای CTA و بخش‌های ویژه */
+
+  /* ===== رنگ‌های حاشیه و کارت ===== */
+  --color-border: #e0e0e0; /* خاکستری خیلی کم - برای حاشیه‌ها */
+  --color-shadow: rgba(0, 0, 0, 0.08); /* سایه ملایم برای کارت‌ها */
+  --color-shadow-hover: rgba(0, 0, 0, 0.15); /* سایه پررنگ‌تر برای هوور */
+
+  /* ===== رنگ‌های وضعیت ===== */
+  --color-success: #4caf50; /* سبز - برای موفقیت */
+  --color-warning: #ffc107; /* زرد - برای هشدار */
+  --color-danger: #dc3545; /* قرمز - برای خطا */
+
+  /* ===== رنگ‌های لینک ===== */
+  --color-link: #0b4f2c; /* سبز تیره - لینک‌ها */
+  --color-link-hover: #4caf50; /* سبز روشن - لینک‌ها در حالت هوور */
+}
+body {
+  margin: 0;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1.6rem; /* چون html روی 62.5% است، بدون این خط متن‌های بدون اندازه ۱۰px می‌شوند */
+  line-height: 1.6;
+}
+/* ===== HEADER ===== */
+.header {
+  background-color: var(--color-bg-primary);
+  padding: 1.5rem 4rem;
+  box-shadow: 0 2px 10px var(--color-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* ===== بخش چپ ===== */
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+/* ===== بخش راست ===== */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  font-size: 1.6rem;
+  padding: 0.8rem 1.6rem;
+  color: var(--color-text-secondary);
+  transition: 0.3s ease;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+  background-color: var(--color-bg-secondary);
+}
+
+/* ===== دکمه Shop Now ===== */
+.btn-shop {
+  font-size: 1.6rem;
+  padding: 0.8rem 2.4rem;
+  background-color: var(--color-button);
+  color: var(--color-text-light);
+  border: none;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 600;
+}
+
+.btn-shop:hover {
+  background-color: var(--color-button-hover);
+  transform: scale(1.05);
+}
+
+/* ===== ریسپانسیو موبایل ===== */
+@media only screen and (max-width: 768px) {
+  .header {
+    padding: 1rem 2rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-right {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  .nav-link {
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .btn-shop {
+    font-size: 1.4rem;
+    padding: 0.6rem 1.8rem;
+  }
+}
+/* main */
+/* ===== HERO SECTION ===== */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  min-height: 80vh;
+  gap: 4rem;
+  background-color: var(--color-bg-primary);
+}
+
+/* ===== سمت چپ: متن ===== */
+.hero-text {
+  flex: 1;
+  max-width: 55%;
+}
+
+.hero-text h1 {
+  font-size: 5.6rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+}
+
+.hero-text h1 span {
+  color: var(--color-primary);
+}
+
+.hero-text p {
+  font-size: 1.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  max-width: 90%;
+}
+
+/* ===== دکمه Hero ===== */
+.btn-hero {
+  font-size: 1.8rem;
+  padding: 1.2rem 3.6rem;
+  background-color: var(--color-button);
+  color: var(--color-text-light);
+  border: none;
+  border-radius: 5rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.btn-hero:hover {
+  background-color: var(--color-button-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(76, 175, 80, 0.4);
+}
+
+.btn-hero:active {
+  transform: scale(0.96);
+}
+
+/* ===== سمت راست: تصویر ===== */
+.hero-image {
+  flex: 1;
+  max-width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 2rem;
+  box-shadow: 0 10px 40px var(--color-shadow-hover);
+}
+
+/* ===== ریسپانسیو تبلت ===== */
+@media only screen and (max-width: 992px) {
+  .hero {
+    padding: 3rem 2rem;
+    min-height: auto;
+    gap: 3rem;
+  }
+
+  .hero-text h1 {
+    font-size: 4rem;
+  }
+
+  .hero-text p {
+    font-size: 1.6rem;
+    max-width: 100%;
+  }
+
+  .btn-hero {
+    font-size: 1.6rem;
+    padding: 1rem 3rem;
+  }
+}
+
+/* ===== ریسپانسیو موبایل ===== */
+@media only screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 3.2rem;
+  }
+
+  .hero-text p {
+    font-size: 1.5rem;
+    max-width: 100%;
+  }
+
+  .hero-image {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .hero-image img {
+    max-height: 300px;
+    border-radius: 1.5rem;
+  }
+
+  .btn-hero {
+    font-size: 1.5rem;
+    padding: 0.9rem 2.8rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2.6rem;
+  }
+
+  .hero-text p {
+    font-size: 1.4rem;
+  }
+
+  .hero-image img {
+    max-height: 220px;
+  }
+}
+
+/* ===== WHY FITZONE SECTION ===== */
+.why {
+  padding: 6rem 2rem;
+  background-color: var(--color-bg-secondary);
+  text-align: center;
+}
+
+.why-header {
+  margin-bottom: 4rem;
+}
+
+.why h2 {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+.why h2 span {
+  color: var(--color-primary);
+}
+
+.why-subtitle {
+  font-size: 1.8rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.why-cards {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.why-card {
+  background-color: var(--color-bg-primary);
+  border-radius: 2rem;
+  padding: 3rem 2.5rem;
+  width: 30%;
+  box-shadow: 0 4px 20px var(--color-shadow);
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 40px var(--color-shadow-hover);
+}
+
+.why-icon {
+  font-size: 4.8rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.why-card h3 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 1.5rem 0;
+}
+
+.why-card h3::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: var(--color-accent);
+  margin: 0 auto 1.5rem auto;
+  border-radius: 3px;
+}
+
+.why-card p {
+  font-size: 1.6rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin: 0;
+  max-width: 100%;
+}
+
+/* ===== ریسپانسیو تبلت ===== */
+@media only screen and (max-width: 992px) {
+  .why {
+    padding: 4rem 2rem;
+  }
+
+  .why h2 {
+    font-size: 3.2rem;
+  }
+
+  .why-cards {
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .why-card {
+    width: 45%;
+    padding: 2.5rem 2rem;
+  }
+
+  .why-card h3 {
+    font-size: 2rem;
+  }
+
+  .why-card p {
+    font-size: 1.5rem;
+  }
+}
+
+/* ===== ریسپانسیو موبایل ===== */
+@media only screen and (max-width: 768px) {
+  .why {
+    padding: 3rem 1.5rem;
+  }
+
+  .why h2 {
+    font-size: 2.8rem;
+  }
+
+  .why-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .why-cards {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .why-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .why-icon {
+    font-size: 3.6rem;
+  }
+
+  .why-card h3 {
+    font-size: 1.8rem;
+  }
+
+  .why-card p {
+    font-size: 1.4rem;
+  }
+}
+/* Products */
+
+.products {
+  padding: 6rem 2rem;
+  text-align: center;
+}
+.products-header {
+  margin-bottom: 4rem;
+}
+.products-header h2 {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+.products-cards {
+  display: flex;
+  justify-content: space-evenly;
+}
+.products-card {
+  width: 30%;
+  background-color: var(--color-bg-primary);
+  border-radius: 2rem;
+  padding: 2rem 1.5rem 2.5rem;
+  box-shadow: 0 4px 20px var(--color-shadow);
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 35rem;
+}
+
+.products-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 40px var(--color-shadow-hover);
+}
+
+.products-card-image {
+  border-radius: 1.5rem;
+  width: 100%;
+  height: 22rem;
+  object-fit: cover;
+  transition: 0.2s ease-in-out;
+}
+
+.products-card-image:hover {
+  transform: scale(1.02);
+}
+
+.products-card-info {
+  margin-top: 1.5rem;
+  text-align: center;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.products-card-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.products-card-price {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 0 1.5rem 0;
+}
+
+.products-card-btn {
+  font-size: 1.5rem;
+  padding: 0.8rem 2.4rem;
+  background-color: var(--color-button);
+  color: var(--color-text-light);
+  border: none;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 600;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.products-card-btn:hover {
+  background-color: var(--color-button-hover);
+  transform: scale(1.05);
+}
+/* ===== ریسپانسیو محصولات ===== */
+@media only screen and (max-width: 992px) {
+  .products-cards {
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .products-card {
+    width: 45%;
+    min-height: 32rem;
+  }
+
+  .products-card-image {
+    height: 18rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .products {
+    padding: 3rem 1.5rem;
+  }
+
+  .products-header h2 {
+    font-size: 2.8rem;
+  }
+
+  .products-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .products-card {
+    width: 100%;
+    max-width: 400px;
+    min-height: 30rem;
+  }
+
+  .products-card-image {
+    height: 16rem;
+  }
+}
+/* ===== CTA SECTION ===== */
+.cta {
+  background-color: var(--color-primary);
+  padding: 7rem 2rem;
+  text-align: center;
+  margin: 0;
+}
+
+.cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta h2 {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--color-text-light);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.3;
+}
+
+.cta p {
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 3.5rem 0;
+  line-height: 1.6;
+}
+
+.btn-cta {
+  font-size: 1.8rem;
+  padding: 1.4rem 4.5rem;
+  background-color: var(--color-text-light);
+  color: var(--color-primary);
+  border: none;
+  border-radius: 5rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-cta:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.3);
+  background-color: #f0f0f0;
+}
+
+.btn-cta:active {
+  transform: scale(0.96);
+}
+
+/* ===== ریسپانسیو تبلت ===== */
+@media only screen and (max-width: 992px) {
+  .cta {
+    padding: 5rem 2rem;
+  }
+
+  .cta h2 {
+    font-size: 3.2rem;
+  }
+
+  .cta p {
+    font-size: 1.6rem;
+  }
+
+  .btn-cta {
+    font-size: 1.6rem;
+    padding: 1.2rem 3.5rem;
+  }
+}
+
+/* ===== ریسپانسیو موبایل ===== */
+@media only screen and (max-width: 768px) {
+  .cta {
+    padding: 4rem 1.5rem;
+  }
+
+  .cta h2 {
+    font-size: 2.6rem;
+  }
+
+  .cta p {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn-cta {
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+    width: 80%;
+    max-width: 280px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .cta h2 {
+    font-size: 2.2rem;
+  }
+
+  .cta p {
+    font-size: 1.4rem;
+  }
+
+  .btn-cta {
+    font-size: 1.4rem;
+    padding: 0.9rem 2.5rem;
+    width: 90%;
+  }
+}
+/* ===== FOOTER ===== */
+.footer {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-light);
+  padding: 4rem 2rem 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-brand {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+  margin: 0 0 1rem 0;
+}
+
+.footer-desc {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+  max-width: 300px;
+  margin: 0;
+}
+
+.footer-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+  margin: 0 0 1.5rem 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.footer-links a:hover {
+  color: var(--color-accent);
+  padding-left: 5px;
+}
+
+.footer-contact {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 0.8rem 0;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.footer-bottom p {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+/* ===== ریسپانسیو فوتر ===== */
+@media only screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .footer-col {
+    min-width: 100%;
+  }
+
+  .footer-desc {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .footer-links a:hover {
+    padding-left: 0;
+  }
+}
+
+/* ===== اصلاحات بازبینی ===== */
+/* بدون این، width:100% همراه با padding از والد بیرون می‌زند و در موبایل اسکرول افقی می‌سازد */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* رنگ دکمه‌ها: متن سفید روی #4caf50 کنتراست ۲.۷۸ دارد (کمتر از ۴.۵)؛ این‌ها ۵.۱۳ و ۷+ هستند */
+  --color-button: #2e7d32;
+  --color-button-hover: #1b5e20;
+}
+
+/* لینک‌هایی که شکل دکمه دارند */
+.btn-shop,
+.btn-hero,
+.btn-cta {
+  display: inline-block;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.footer-contact a {
+  color: inherit;
+}
+
+.footer-contact a:hover {
+  color: var(--color-accent);
+}
+
+/* لینک‌های داخلی زیر هدر Sticky پنهان نشوند */
+section[id],
+footer[id] {
+  scroll-margin-top: 8rem;
+}
+
+/* حلقه‌ی فوکوس برای کاربران کیبورد */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.cta :focus-visible,
+.footer :focus-visible {
+  outline-color: #ffffff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

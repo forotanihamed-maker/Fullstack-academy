@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <nav class="header__nav">
+        <h1 class="header__title">
+          <a href="#" class="header__brand">TaskFlow</a>
+        </h1>
+        <button type="button" class="header__btn" id="new-task-btn">
+          + New Task
+        </button>
+      </nav>
+    </header>
+    <div class="overlay" id="task-form-overlay">
+      <section
+        class="task-form-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <header class="new-task-header">
+          <h2 id="modal-title">New Task</h2>
+          <button
+            type="button"
+            class="sabad-close"
+            id="task-form-close"
+            aria-label="Close"
+          >
+            ×
+          </button>
+        </header>
+
+        <form class="task-form" id="task-form">
+          <label>
+            Title
+            <input type="text" id="task-title" required />
+          </label>
+
+          <label>
+            Description
+            <textarea id="task-description"></textarea>
+          </label>
+
+          <label>
+            Category
+            <select id="task-category">
+              <option value="development">Development</option>
+              <option value="design">Design</option>
+              <option value="marketing">Marketing</option>
+              <option value="personal">Personal</option>
+            </select>
+          </label>
+
+          <label>
+            Priority
+            <select id="task-priority">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </label>
+
+          <label>
+            Status
+            <select id="task-status">
+              <option value="pending">Pending</option>
+              <option value="progress">In Progress</option>
+              <option value="completed">Completed</option>
+            </select>
+          </label>
+
+          <label>
+            Due Date
+            <input type="date" id="task-due-date" />
+          </label>
+
+          <button type="submit" id="submit-task">Save Task</button>
+        </form>
+      </section>
+    </div>
+    <!-- ===== MAIN ===== -->
+    <main class="main">
+      <!-- آمار -->
+      <section class="stats" aria-label="Task statistics">
+        <div class="stat">
+          <span class="stat__label">Total</span>
+          <strong class="stat__value" id="stat-total">0</strong>
+        </div>
+        <div class="stat">
+          <span class="stat__label">Pending</span>
+          <strong class="stat__value" id="stat-pending">0</strong>
+        </div>
+        <div class="stat">
+          <span class="stat__label">In Progress</span>
+          <strong class="stat__value" id="stat-progress">0</strong>
+        </div>
+        <div class="stat">
+          <span class="stat__label">Completed</span>
+          <strong class="stat__value" id="stat-completed">0</strong>
+        </div>
+      </section>
+
+      <!-- لیست Taskها -->
+      <section class="tasks" id="tasks" aria-label="Tasks list">
+        <h2 class="section-title">Our Tasks</h2>
+
+        <!-- Toolbar: جستجو + فیلترها -->
+        <div class="tasks__toolbar">
+          <input
+            type="search"
+            id="search-input"
+            class="search"
+            placeholder="Search tasks..."
+            aria-label="Search tasks"
+          />
+
+          <div class="filters">
+            <select
+              id="filter-status"
+              name="status"
+              class="filter"
+              aria-label="Filter by status"
+            >
+              <option value="all">All Statuses</option>
+              <option value="pending">Pending</option>
+              <option value="progress">In Progress</option>
+              <option value="completed">Completed</option>
+            </select>
+
+            <select
+              id="filter-priority"
+              name="priority"
+              class="filter"
+              aria-label="Filter by priority"
+            >
+              <option value="all">All Priorities</option>
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+
+            <select
+              id="filter-category"
+              name="category"
+              class="filter"
+              aria-label="Filter by category"
+            >
+              <option value="all">All Categories</option>
+              <option value="development">Development</option>
+              <option value="design">Design</option>
+              <option value="marketing">Marketing</option>
+              <option value="personal">Personal</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Grid کارت‌ها -->
+        <div class="tasks__grid" id="tasks-grid">
+          <!-- کارت‌ها با JS تزریق می‌شن -->
+        </div>
+
+        <!-- Empty State -->
+        <div class="no-results" id="no-results" role="status" hidden>
+          <p id="empty-message"></p>
+          <button type="button" class="task-card__btn" id="clear-filters" hidden>
+            Clear filters
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <p>TaskFlow &copy; 2026</p>
+    </footer>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
