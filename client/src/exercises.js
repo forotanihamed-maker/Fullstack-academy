@@ -2,6 +2,7 @@
 // هر تست تابعی است که document پیش‌نمایش را می‌گیرد و true/false برمی‌گرداند.
 const px = v => parseFloat(v);
 const cs = (d, el, pseudo) => d.defaultView.getComputedStyle(el, pseudo);
+const eq = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
 export const exercises = {
   html: [
@@ -113,93 +114,254 @@ export const exercises = {
       ],
     },
   ],
+  javascript: [
+    {
+      id: "js-1", runner: "js", exports: ["sum", "average"], title: "تابع جمع و میانگین",
+      task: "دو تابع بنویس: <code>sum(a, b)</code> جمع دو عدد را برگرداند و <code>average(numbers)</code> میانگین اعضای آرایه را. اگر آرایه خالی بود، average باید ۰ برگرداند.",
+      starter: "// function sum(a, b) { ... }\n// function average(numbers) { ... }\n",
+      solution: "function sum(a, b) {\n  return a + b;\n}\n\nfunction average(numbers) {\n  if (numbers.length === 0) return 0;\n  return numbers.reduce((total, n) => total + n, 0) / numbers.length;\n}",
+      tests: [
+        { label: "sum(2, 3) برابر ۵ است", run: r => r.values.sum(2, 3) === 5 },
+        { label: "sum(-1, 1) برابر ۰ است", run: r => r.values.sum(-1, 1) === 0 },
+        { label: "average([2, 4, 6]) برابر ۴ است", run: r => r.values.average([2, 4, 6]) === 4 },
+        { label: "average([]) برابر ۰ است", run: r => r.values.average([]) === 0 },
+      ],
+    },
+    {
+      id: "js-2", runner: "js", exports: ["evenSquares"], title: "فیلتر و تبدیل آرایه",
+      task: "تابع <code>evenSquares(numbers)</code> را بنویس که فقط اعداد زوج را نگه دارد، هرکدام را به توان دو برساند و آرایه‌ی جدید برگرداند. آرایه‌ی ورودی نباید تغییر کند.",
+      starter: "// از filter و map استفاده کن\n",
+      solution: "function evenSquares(numbers) {\n  return numbers.filter((n) => n % 2 === 0).map((n) => n * n);\n}",
+      tests: [
+        { label: "evenSquares([1, 2, 3, 4]) برابر [4, 16] است", run: r => eq(r.values.evenSquares([1, 2, 3, 4]), [4, 16]) },
+        { label: "آرایه‌ی ورودی تغییر نمی‌کند", run: r => { const input = [1, 2, 3, 4]; r.values.evenSquares(input); return eq(input, [1, 2, 3, 4]); } },
+        { label: "آرایه‌ی بدون عدد زوج، آرایه‌ی خالی می‌دهد", run: r => eq(r.values.evenSquares([1, 3, 5]), []) },
+      ],
+    },
+    {
+      id: "js-3", runner: "js", exports: ["describeUser"], title: "آبجکت و Destructuring",
+      task: "تابع <code>describeUser(user)</code> را بنویس. ورودی مثل <code>{ name, age, address: { city } }</code> است و خروجی رشته‌ی «علی، 30 ساله، تهران». اگر age تعریف نشده بود به جای عدد بنویس «نامشخص». از Destructuring استفاده کن.",
+      starter: "// function describeUser({ name, age, address }) { ... }\n",
+      solution: "function describeUser({ name, age, address: { city } }) {\n  return name + \"، \" + (age ?? \"نامشخص\") + \" ساله، \" + city;\n}",
+      tests: [
+        { label: "کاربر کامل درست توصیف می‌شود", run: r => r.values.describeUser({ name: "علی", age: 30, address: { city: "تهران" } }) === "علی، 30 ساله، تهران" },
+        { label: "نبودن age با «نامشخص» نمایش داده می‌شود", run: r => r.values.describeUser({ name: "سارا", address: { city: "شیراز" } }) === "سارا، نامشخص ساله، شیراز" },
+      ],
+    },
+    {
+      id: "js-4", runner: "js", exports: ["makeCounter"], title: "Closure: شمارنده",
+      task: "تابع <code>makeCounter(start)</code> را بنویس که یک تابع برمی‌گرداند. هر بار صدا زدن تابع برگشتی، مقدار را یکی زیاد می‌کند و مقدار جدید را برمی‌گرداند. دو شمارنده باید مستقل باشند. اگر start داده نشد، از ۰ شروع کن.",
+      starter: "// function makeCounter(start = 0) { ... }\n",
+      solution: "function makeCounter(start = 0) {\n  let count = start;\n  return () => ++count;\n}",
+      tests: [
+        { label: "شمارنده‌ی پیش‌فرض اولین بار ۱ می‌دهد", run: r => r.values.makeCounter()() === 1 },
+        { label: "شمارنده با start=10 مقادیر ۱۱ و ۱۲ می‌دهد", run: r => { const counter = r.values.makeCounter(10); return counter() === 11 && counter() === 12; } },
+        { label: "دو شمارنده مستقل‌اند", run: r => { const a = r.values.makeCounter(); const b = r.values.makeCounter(); a(); a(); return b() === 1; } },
+      ],
+    },
+    {
+      id: "js-5", runner: "js-dom", title: "DOM: ساخت لیست از آرایه",
+      html: "<h2>اعضای تیم</h2>\n<ul id=\"list\"></ul>",
+      task: "آرایه‌ی names را با <code>createElement</code> به li تبدیل کن و داخل <code>ul#list</code> اضافه کن. متن هر li باید نام باشد. از <code>innerHTML</code> استفاده نکن.",
+      starter: "const names = [\"علی\", \"سارا\", \"رضا\"];\nconst list = document.querySelector(\"#list\");\n\n// li بساز و اضافه کن\n",
+      solution: "const names = [\"علی\", \"سارا\", \"رضا\"];\nconst list = document.querySelector(\"#list\");\n\nnames.forEach((name) => {\n  const li = document.createElement(\"li\");\n  li.textContent = name;\n  list.append(li);\n});",
+      tests: [
+        { label: "سه li داخل ul#list وجود دارد", run: d => d.querySelectorAll("#list li").length === 3 },
+        { label: "متن liها با آرایه یکی است", run: d => eq([...d.querySelectorAll("#list li")].map(li => li.textContent.trim()), ["علی", "سارا", "رضا"]) },
+        { label: "از innerHTML استفاده نشده است", run: (d, { code }) => !code.includes("innerHTML") },
+      ],
+    },
+    {
+      id: "js-6", runner: "js-dom", title: "DOM، رویداد و localStorage",
+      html: "<button id=\"inc\" type=\"button\">افزایش</button> <p>شمارنده: <strong id=\"count\">0</strong></p>",
+      task: "با کلیک روی <code>#inc</code> مقدار <code>#count</code> را یکی زیاد کن و مقدار جدید را در localStorage با کلید «fs-demo-count» ذخیره کن. مقدار اولیه را هم هنگام شروع از localStorage بخوان (اگر نبود ۰).",
+      starter: "const button = document.querySelector(\"#inc\");\nconst output = document.querySelector(\"#count\");\n\n// مقدار اولیه و رویداد کلیک\n",
+      solution: "const button = document.querySelector(\"#inc\");\nconst output = document.querySelector(\"#count\");\n\nlet count = Number(localStorage.getItem(\"fs-demo-count\") || 0);\noutput.textContent = String(count);\n\nbutton.addEventListener(\"click\", () => {\n  count += 1;\n  output.textContent = String(count);\n  localStorage.setItem(\"fs-demo-count\", String(count));\n});",
+      tests: [
+        { label: "مقدار اولیه از localStorage خوانده می‌شود", run: (d, { code }) => code.includes("localStorage.getItem") },
+        { label: "با کلیک، شمارنده یک واحد زیاد می‌شود", run: d => { const out = d.querySelector("#count"); const before = Number(out.textContent); d.querySelector("#inc").click(); return Number(out.textContent) === before + 1; } },
+        { label: "مقدار جدید در localStorage ذخیره می‌شود", run: d => { const out = d.querySelector("#count"); const ok = localStorage.getItem("fs-demo-count") === out.textContent.trim(); localStorage.removeItem("fs-demo-count"); return ok; } },
+      ],
+    },
+  ],
+
+  "async-js": [
+    {
+      id: "async-1", runner: "js", exports: ["delay"], title: "Promise و تأخیر",
+      task: "تابع <code>delay(ms)</code> بنویس که یک Promise برمی‌گرداند و بعد از ms میلی‌ثانیه با مقدار «done» resolve می‌شود.",
+      starter: "// function delay(ms) { ... }\n",
+      solution: "function delay(ms) {\n  return new Promise((resolve) => setTimeout(() => resolve(\"done\"), ms));\n}",
+      tests: [
+        { label: "خروجی یک Promise است", run: r => r.values.delay(0) instanceof Promise },
+        { label: "بعد از مدت مشخص با «done» resolve می‌شود", run: async r => (await r.values.delay(20)) === "done" },
+      ],
+    },
+    {
+      id: "async-2", runner: "js", exports: ["doubleAll"], title: "Promise.all",
+      task: "تابع <code>doubleAll(values)</code> را بنویس که برای هر عدد یک Promise بسازد (مثلاً <code>Promise.resolve(n * 2)</code>) و با <code>Promise.all</code> همه را با هم اجرا کند و آرایه‌ی نتایج را برگرداند.",
+      starter: "// function doubleAll(values) { ... }\n",
+      solution: "function doubleAll(values) {\n  return Promise.all(values.map((n) => Promise.resolve(n * 2)));\n}",
+      tests: [
+        { label: "خروجی یک Promise است", run: r => r.values.doubleAll([1]) instanceof Promise },
+        { label: "همه‌ی مقادیر دو برابر می‌شوند", run: async r => eq(await r.values.doubleAll([1, 2, 3]), [2, 4, 6]) },
+        { label: "آرایه‌ی خالی نتیجه‌ی خالی می‌دهد", run: async r => eq(await r.values.doubleAll([]), []) },
+      ],
+    },
+    {
+      id: "async-3", runner: "js", exports: ["safeLoad"], title: "async/await و مدیریت خطا",
+      fetchMock: {
+        "/api/ok": { status: 200, body: { value: 42 } },
+        "/api/missing": { status: 404, body: { error: "not found" } },
+      },
+      task: "تابع async به نام <code>safeLoad(url)</code> بنویس: با <code>fetch(url)</code> درخواست بده؛ اگر <code>response.ok</code> نبود خطا بده؛ در غیر این صورت JSON را برگردان. خطا را با try/catch بگیر و به جای throw، <code>{ ok: false, error: پیام }</code> برگردان؛ در موفقیت هم <code>{ ok: true, data }</code>.",
+      starter: "// async function safeLoad(url) { ... }\n",
+      solution: "async function safeLoad(url) {\n  try {\n    const response = await fetch(url);\n    if (!response.ok) throw new Error(\"HTTP \" + response.status);\n    return { ok: true, data: await response.json() };\n  } catch (error) {\n    return { ok: false, error: error.message };\n  }\n}",
+      tests: [
+        { label: "درخواست موفق داده را برمی‌گرداند", run: async r => { const out = await r.values.safeLoad("/api/ok"); return out.ok === true && out.data.value === 42; } },
+        { label: "خطای ۴۰۴ به خروجی ok:false تبدیل می‌شود", run: async r => { const out = await r.values.safeLoad("/api/missing"); return out.ok === false && typeof out.error === "string"; } },
+      ],
+    },
+    {
+      id: "async-4", runner: "code", title: "ترتیب اجرا در Event Loop",
+      task: "ترتیب چاپ خروجی کد زیر را بنویس (هر مورد در یک خط):\n\nconsole.log(\"A\");\nsetTimeout(() => console.log(\"B\"), 0);\nPromise.resolve().then(() => console.log(\"C\"));\nconsole.log(\"D\");",
+      starter: "// خروجی به ترتیب:\n// 1. ___\n// 2. ___\n// 3. ___\n// 4. ___\n",
+      solution: "// 1. A\n// 2. D\n// 3. C\n// 4. B",
+      tests: [
+        { label: "همه‌ی چهار حرف A، B، C و D نوشته شده‌اند", run: (d, { code }) => ["A", "B", "C", "D"].every(letter => new RegExp(`\\b${letter}\\b`).test(code)) },
+        { label: "ترتیب A، D، C، B درست است", run: (d, { code }) => { const answer = code.split("\n").map(line => /^\/\/\s*\d+\.\s*(.*)$/.exec(line.trim())?.[1]?.trim()).filter(Boolean); return eq(answer.slice(0, 4), ["A", "D", "C", "B"]); } },
+      ],
+    },
+  ],
+
+  api: [
+    {
+      id: "api-1", runner: "js", exports: ["buildQuery"], title: "ساخت Query String",
+      task: "تابع <code>buildQuery(params)</code> بنویس که یک آبجکت از پارامترها می‌گیرد و رشته‌ی query (بدون علامت ?) برمی‌گرداند. از <code>URLSearchParams</code> استفاده کن؛ مثلاً <code>{ q: \"react hooks\", page: 2 }</code> باید <code>q=react+hooks&amp;page=2</code> بدهد.",
+      starter: "// function buildQuery(params) { ... }\n",
+      solution: "function buildQuery(params) {\n  return new URLSearchParams(params).toString();\n}",
+      tests: [
+        { label: "پارامترهای ساده درست ساخته می‌شوند", run: r => r.values.buildQuery({ page: 2, limit: 10 }) === "page=2&limit=10" },
+        { label: "فاصله به + تبدیل می‌شود", run: r => r.values.buildQuery({ q: "react hooks" }) === "q=react+hooks" },
+        { label: "آبجکت خالی رشته‌ی خالی می‌دهد", run: r => r.values.buildQuery({}) === "" },
+      ],
+    },
+    {
+      id: "api-2", runner: "js", exports: ["fetchUser"], title: "fetch و بررسی response.ok",
+      fetchMock: {
+        "/api/users/1": { status: 200, body: { id: 1, name: "علی" } },
+        "/api/users/999": { status: 404, body: { error: "not found" } },
+      },
+      task: "تابع async به نام <code>fetchUser(id)</code> بنویس: به <code>/api/users/</code> به‌همراه id درخواست بده؛ اگر <code>response.ok</code> نبود Error با پیام مناسب throw کن؛ در غیر این صورت JSON کاربر را برگردان.",
+      starter: "// async function fetchUser(id) { ... }\n",
+      solution: "async function fetchUser(id) {\n  const response = await fetch(\"/api/users/\" + id);\n  if (!response.ok) throw new Error(\"HTTP \" + response.status);\n  return response.json();\n}",
+      tests: [
+        { label: "کاربر موجود برگردانده می‌شود", run: async r => { const user = await r.values.fetchUser(1); return user.name === "علی"; } },
+        { label: "برای ۴۰۴ خطا throw می‌شود", run: async r => { try { await r.values.fetchUser(999); return false; } catch (error) { return /404/.test(error.message); } } },
+      ],
+    },
+    {
+      id: "api-3", runner: "js", exports: ["debounce"], title: "Debounce برای جستجو",
+      task: "تابع <code>debounce(fn, ms)</code> بنویس که تابعی برمی‌گرداند؛ تا وقتی ms میلی‌ثانیه از آخرین فراخوانی نگذشته، fn اجرا نشود و در نهایت فقط یک بار با آخرین آرگومان‌ها اجرا شود.",
+      starter: "// function debounce(fn, ms) { ... }\n",
+      solution: "function debounce(fn, ms) {\n  let timer;\n  return (...args) => {\n    clearTimeout(timer);\n    timer = setTimeout(() => fn(...args), ms);\n  };\n}",
+      tests: [
+        { label: "در بازه‌ی انتظار فقط یک بار با آخرین مقدار اجرا می‌شود", run: async r => { const calls = []; const fn = r.values.debounce((value) => calls.push(value), 20); fn("a"); fn("b"); fn("c"); await new Promise(resolve => setTimeout(resolve, 60)); return eq(calls, ["c"]); } },
+        { label: "بعد از پایان انتظار دوباره اجرا می‌شود", run: async r => { let calls = 0; const fn = r.values.debounce(() => { calls += 1; }, 15); fn(); await new Promise(resolve => setTimeout(resolve, 40)); fn(); await new Promise(resolve => setTimeout(resolve, 40)); return calls === 2; } },
+      ],
+    },
+  ],
+
   react: [
     {
-      id: "react-1", title: "یک Component ساده بساز",
+      id: "react-1", runner: "react", title: "یک Component ساده بساز",
       task: "یک Component به نام Welcome بنویس که یک <h1> با متن «سلام به ری‌اکت» برگرداند.",
       starter: `// یک Component بساز و export کن\n\n// کد خود را اینجا بنویس\n`,
       solution: `export default function Welcome() {\n  return <h1>سلام به ری‌اکت</h1>;\n}`,
       tests: [
-        { label: "کلمه Welcome در کد وجود دارد", run: d => d.body.textContent.includes("Welcome") },
-        { label: "vesrtion h1 در کد وجود دارد", run: d => d.body.textContent.includes("<h1>") },
+        { label: "کامپوننت Welcome تعریف شده است", run: (d, { code }) => /function\s+Welcome|const\s+Welcome/.test(code) },
+        { label: "خروجی یک h1 با متن «سلام» دارد", run: d => (d.querySelector("h1")?.textContent || "").includes("سلام") },
       ],
     },
     {
-      id: "react-2", title: "Component با Props",
+      id: "react-2", runner: "react", title: "Component با Props",
       task: "یک Component به نام Greeting بنویس که Prop به نام name بگیرد و در <h1> نمایش دهد. مقدار پیش‌فرض name باید «میهمان» باشد.",
       starter: `// Greeting Component با prop name\n\n// کد خود را اینجا بنویس\n`,
       solution: `export default function Greeting({ name = "میهمان" }) {\n  return <h1>سلام {name}</h1>;\n}`,
       tests: [
-        { label: "نام Greeting در کد وجود دارد", run: d => d.body.textContent.includes("Greeting") },
-        { label: "prop name استفاده شده است", run: d => d.body.textContent.includes("name") },
+        { label: "کامپوننت Greeting تعریف شده است", run: (d, { code }) => /function\s+Greeting|const\s+Greeting/.test(code) },
+        { label: "مقدار پیش‌فرض name برابر «میهمان» است", run: d => (d.querySelector("h1")?.textContent || "").includes("میهمان") },
+        { label: "prop name در کد استفاده شده است", run: (d, { code }) => /\bname\b/.test(code) },
       ],
     },
     {
-      id: "react-3", title: "شمارنده با useState",
+      id: "react-3", runner: "react", title: "شمارنده با useState",
       task: "یک Component شمارنده بساز: دکمه‌ای برای افزایش و نمایش عدد. مقدار ابتدایی ۰ باشد.",
       starter: `import { useState } from "react";\n\n// کد خود را اینجا بنویس\n`,
       solution: `import { useState } from "react";\n\nexport default function Counter() {\n  const [count, setCount] = useState(0);\n  return (\n    <div>\n      <p>{count}</p>\n      <button onClick={() => setCount(count + 1)}>افزایش</button>\n    </div>\n  );\n}`,
       tests: [
-        { label: "useState در کد وجود دارد", run: d => d.body.textContent.includes("useState") },
-        { label: "setCount در کد وجود دارد", run: d => d.body.textContent.includes("setCount") },
-        { label: "دکمه در کد وجود دارد", run: d => d.body.textContent.includes("<button") },
+        { label: "useState در کد استفاده شده است", run: (d, { code }) => code.includes("useState") },
+        { label: "عدد اولیه ۰ رندر شده است", run: d => (d.body.textContent || "").trim().includes("0") },
+        { label: "یک دکمه رندر شده است", run: d => !!d.querySelector("button") },
       ],
     },
     {
-      id: "react-4", title: "رویداد کلیک و تابع",
+      id: "react-4", runner: "react", title: "رویداد کلیک و تابع",
       task: "یک دکمه بساز که هنگام کلیک، یک پیام در <p> نمایش دهد (مثل «دکمه زده شد»).",
       starter: `import { useState } from "react";\n\n// کد خود را اینجا بنویس\n`,
       solution: `import { useState } from "react";\n\nexport default function ClickDemo() {\n  const [msg, setMsg] = useState("");\n  return (\n    <div>\n      <button onClick={() => setMsg("دکمه زده شد")}>کلیک کن</button>\n      <p>{msg}</p>\n    </div>\n  );\n}`,
       tests: [
-        { label: "onClick در کد وجود دارد", run: d => d.body.textContent.includes("onClick") },
-        { label: "setMsg یا setState استفاده شده است", run: d => d.body.textContent.includes("setMsg") || d.body.textContent.includes("setState") },
+        { label: "onClick روی دکمه تعریف شده است", run: (d, { code }) => code.includes("onClick") },
+        { label: "setMsg یا setState استفاده شده است", run: (d, { code }) => code.includes("setMsg") || code.includes("setState") },
+        { label: "یک دکمه رندر شده است", run: d => !!d.querySelector("button") },
       ],
     },
     {
-      id: "react-5", title: "نمایش شرطی (Conditional Rendering)",
+      id: "react-5", runner: "react", title: "نمایش شرطی (Conditional Rendering)",
       task: "یک Component بساز که اگر isLoggedIn true باشد «خوش آمدی» و در غیر این صورت «وارد شو» را نشان دهد.",
       starter: `import { useState } from "react";\n\n// کد خود را اینجا بنویس\n`,
       solution: `import { useState } from "react";\n\nexport default function Auth() {\n  const [isLoggedIn, setIsLoggedIn] = useState(false);\n  return (\n    <div>\n      {isLoggedIn ? <p>خوش آمدی</p> : <p>وارد شو</p>}\n      <button onClick={() => setIsLoggedIn((v) => !v)}>تغییر وضعیت</button>\n    </div>\n  );\n}`,
       tests: [
-        { label: "عملگر ? : یا && استفاده شده است", run: d => d.body.textContent.includes("?") || d.body.textContent.includes("&&") },
-        { label: "isLoggedIn نام متغییری است", run: d => d.body.textContent.includes("isLoggedIn") },
+        { label: "حالت اولیه «وارد شو» را نشان می‌دهد", run: d => (d.body.textContent || "").includes("وارد شو") },
+        { label: "isLoggedIn در کد استفاده شده است", run: (d, { code }) => code.includes("isLoggedIn") },
+        { label: "نمایش شرطی (? : یا &&) استفاده شده است", run: (d, { code }) => code.includes("?") || code.includes("&&") },
       ],
     },
     {
-      id: "react-6", title: "رندر لیست با map",
+      id: "react-6", runner: "react", title: "رندر لیست با map",
       task: "یک آرایه از ۳ نام داشته باش و با map آنها را در <ul> به صورت <li> نمایش بده. هر li باید key داشته باشد.",
       starter: `// کد خود را اینجا بنویس\n`,
       solution: `const names = ["علی", "سارا", "رضا"];\n\nexport default function NameList() {\n  return (\n    <ul>\n      {names.map((n) => (<li key={n}>{n}</li>))}\n    </ul>\n  );\n}`,
       tests: [
-        { label: "map در کد وجود دارد", run: d => d.body.textContent.includes(".map(") },
-        { label: "key استفاده شده است", run: d => d.body.textContent.includes("key=") },
-        { label: "li در کد وجود دارد", run: d => d.body.textContent.includes("<li") },
+        { label: "یک ul با ۳ آیتم li رندر شده است", run: d => d.querySelectorAll("ul li").length === 3 },
+        { label: "map در کد استفاده شده است", run: (d, { code }) => code.includes(".map(") },
+        { label: "برای liها key تعریف شده است", run: (d, { code }) => code.includes("key=") },
       ],
     },
     {
-      id: "react-7", title: "فرم کنترل‌شده (Controlled Input)",
+      id: "react-7", runner: "react", title: "فرم کنترل‌شده (Controlled Input)",
       task: "یک input بساز که مقدار آن در State ذخیره شود و زیر آن در یک <p> نمایش داده شود.",
       starter: `import { useState } from "react";\n\n// کد خود را اینجا بنویس\n`,
       solution: `import { useState } from "react";\n\nexport default function TextDemo() {\n  const [text, setText] = useState("");\n  return (\n    <div>\n      <input value={text} onChange={(e) => setText(e.target.value)} />\n      <p>{text}</p>\n    </div>\n  );\n}`,
       tests: [
-        { label: "value در input استفاده شده است", run: d => d.body.textContent.includes("value=") },
-        { label: "onChange در کد وجود دارد", run: d => d.body.textContent.includes("onChange") },
+        { label: "یک input رندر شده است", run: d => !!d.querySelector("input") },
+        { label: "onChange در کد استفاده شده است", run: (d, { code }) => code.includes("onChange") },
+        { label: "مقدار input از State خوانده می‌شود", run: (d, { code }) => code.includes("value=") },
       ],
     },
     {
-      id: "react-8", title: "useEffect برای تغییر عنوان صفحه",
+      id: "react-8", runner: "react", title: "useEffect برای تغییر عنوان صفحه",
       task: "با useEffect، هنگام لود صفحه، document.title را به «صفحه من» تغییر بده.",
       starter: `import { useEffect } from "react";\n\n// کد خود را اینجا بنویس\n`,
       solution: `import { useEffect } from "react";\n\nexport default function TitleDemo() {\n  useEffect(() => {\n    document.title = "صفحه من";\n  }, []);\n  return <p>title تغییر کرد</p>;\n}`,
       tests: [
-        { label: "useEffect در کد وجود دارد", run: d => d.body.textContent.includes("useEffect") },
-        { label: "document.title در کد وجود دارد", run: d => d.body.textContent.includes("document.title") },
-        { label: "[] Dependency array وجود دارد", run: d => d.body.textContent.includes("[]") },
+        { label: "useEffect در کد استفاده شده است", run: (d, { code }) => code.includes("useEffect") },
+        { label: "document.title در کد تغییر داده می‌شود", run: (d, { code }) => code.includes("document.title") },
+        { label: "آرایه‌ی وابستگی [] وجود دارد", run: (d, { code }) => code.includes("[]") },
       ],
     },
     {
-      id: "react-9", title: "React Router (نایاب)",
-      task: "کد زیر را ببین و خطاهای آن را پیدا کن. react-router-dom از چه سه تکه اصلی استفاده می‌کند؟ (پاسخ را در کامنت بنویس)",
+      id: "react-9", runner: "code", title: "React Router (مفاهیم پایه)",
+      task: "react-router-dom از چه سه تکه اصلی استفاده می‌کند؟ پاسخ را در کامنت بنویس.",
       starter: `// سه تکه اصلی react-router-dom:\n// 1. _________\n// 2. _________\n// 3. _________\n`,
       solution: `// سه تکه اصلی react-router-dom:\n// 1. BrowserRouter\n// 2. Routes و Route\n// 3. Link\n`,
       tests: [
@@ -209,11 +371,10 @@ export const exercises = {
       ],
     },
     {
-      id: "react-10", title: "Error Boundary (مفاهیمی)",
+      id: "react-10", runner: "code", title: "Error Boundary (مفاهیمی)",
       task: "Error Boundary چه خطایی را می‌گیرد؟ پاسخ کوتاه بنویس (مثلاً: خطای رندر Componentها).",
       starter: `// پاسخ خود را اینجا بنویس:\n\n// ...\n`,
-      solution: `Error Boundary خطایی که در حین رندر یک Component اتفاق می‌افtritt را می‌گیرد و به جای صفحه سفید، پیام خطا نشان می‌دهد.`,
-
+      solution: `Error Boundary خطایی که در حین رندر یک Component اتفاق می‌افتد را می‌گیرد و به جای صفحه سفید، پیام خطا نشان می‌دهد.`,
       tests: [
         { label: "متن پاسخ نوشته شده است", run: d => d.body.textContent.trim().length > 10 },
       ],

@@ -63,3 +63,5 @@ Thumbs.db
 .eslintcache
 .stylelintcache
 .parcel-cache
+.opencode
+opencode.json

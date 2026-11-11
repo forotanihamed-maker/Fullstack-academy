@@ -3,3 +3,7 @@
 .solution{margin-top:.8rem}
 .solution pre{direction:ltr;text-align:left;background:var(--ink);color:#e8f1ee;padding:1rem;border-radius:8px;overflow-x:auto;line-height:1.6;margin:0}
 .actions{flex-wrap:wrap}
+.runner-note{font-size:.85rem;color:#4b5f59;margin:.2rem 0 .8rem}
+.runner-note code{font-size:.85em}
+.runner-error{margin:.8rem 0 0;padding:.6rem .9rem;border:1px solid var(--bad);border-radius:8px;background:#fef3f2;color:var(--bad);font-weight:600;line-height:1.7}
+button:disabled{opacity:.55;cursor:progress}
