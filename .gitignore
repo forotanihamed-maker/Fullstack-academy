@@ -52,6 +52,10 @@ coverage/
 .DS_Store
 Thumbs.db
 
+# ===== Vercel =====
+.vercel
+.vercelignore
+
 # ===== Misc =====
 *.pid
 *.seed

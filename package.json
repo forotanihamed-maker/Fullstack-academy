@@ -1,8 +1,13 @@
 {
   "name": "fullstack-site",
   "private": true,
+  "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "concurrently \"npm --prefix server start\" \"npm --prefix client run dev\"",
+    "build": "npm --prefix client run build",
     "install:all": "npm install && npm --prefix server install && npm --prefix client install"
   },
   "devDependencies": {

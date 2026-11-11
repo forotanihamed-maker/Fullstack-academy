@@ -43,9 +43,18 @@ const movieExplorer = {
   file: "projects/movie-explorer.md",
 };
 
+const movieExplorerAi = {
+  title: "Movie Explorer — AI",
+  level: "متوسط تا پیشرفته",
+  status: "نمونه‌ی کامل",
+  summary: "نسخه‌ی دوم همان بریف: Skeleton، مودال دسترس‌پذیر، پوستر جایگزین SVG و بازبینی کامل کد",
+  file: "projects/movie-explorer-ai.md",
+  demo: "/demos/movie-explorer-ai/index.html",
+};
+
 export const projectsBySlug = {
   html: [fitzone],
   css: [fitzone],
   javascript: [sportify, taskflow, pocketLedger],
-  api: [movieExplorer],
+  api: [movieExplorer, movieExplorerAi],
 };
